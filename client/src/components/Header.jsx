@@ -154,7 +154,7 @@ const Header = () => {
 
       {/* Main Nav */}
       <div className="container mx-auto px-4 py-3 flex items-center justify-between space-x-6">
-        <a href="/" className="cursor-default"><img src="/Exec-Stream Logo.svg" alt="ExecStream" className="h-20" /></a>
+        <a href="/" className="cursor-default"><img src="/Exec-Stream Logo.svg" alt="ExecStream" className="h-20 w-auto" /></a>
         <div className="md:hidden flex items-center">
           <button onClick={toggleMobileMenu} className="text-gray-900 focus:outline-none">
             {isMobileMenuOpen ? <HiOutlineX size={24} /> : <HiOutlineMenu size={24} />}

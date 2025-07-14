@@ -5,7 +5,7 @@ export const subscribeNewsletter = createAsyncThunk(
   'newsletter/subscribe',
   async (email, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:5000/api/v1/newsletter/subscribers/new', {
+      const response = await fetch('/api/v1/newsletter/subscribers/new', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),

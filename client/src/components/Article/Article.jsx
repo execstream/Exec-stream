@@ -5,7 +5,7 @@ import ArticleFooter from "./ArticleFooter";
 import Comment from "./Comment";
 import SlidingBanner from "../Homepage/SlidingBanner";
 import Sidebar from "./Sidebar";
-
+import { Helmet } from "react-helmet-async";
 const Article = () => {
   useEffect(() => {
   window.scrollTo(0, 0);

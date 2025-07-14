@@ -20,12 +20,12 @@ const Article = () => {
       <meta property="og:type" content="article" />
       <meta property="og:title" content="The Invisible Risk in Digital Diagnostics" />
       <meta property="og:description" content="Explore how AI-powered medical devices are transforming Indian healthcare and the challenges of regulating them." />
-      <meta property="og:image" content="/Biplab Lenin.jpeg" />
+      <meta property="og:image" content="https://www.exec-stream.com/Biplab%20Lenin.jpeg" />
       <meta property="og:url" content="https://www.exec-stream.com/articles/article/1" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="The Invisible Risk in Digital Diagnostics" />
       <meta name="twitter:description" content="Explore how AI-powered medical devices are transforming Indian healthcare and the challenges of regulating them." />
-      <meta name="twitter:image" content="/Biplab Lenin.jpeg" />
+      <meta name="twitter:image" content="https://www.exec-stream.com/Biplab%20Lenin.jpeg" />
     </Helmet>
     <section className="mx-auto px-6 md:px-20 py-10 text-gray-800">
      

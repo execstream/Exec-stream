@@ -71,44 +71,48 @@ const CXO = () => {
 
   return (
     <div className="w-full px-4 md:px-6 lg:px-8 mt-5">
-      <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Main CXO Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Main Section */}
         <div className="lg:col-span-2">
           <div className="bg-[#789BFF26] px-4 sm:px-6 py-6 rounded-md">
-            <div className="h-[1px] w-full bg-black mb-4"></div>
+            <div className="h-[1px] w-full bg-black mb-4" />
+
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
               <h2 className="text-2xl font-bold text-black">CXO</h2>
-              <Link to="/cxos" className="text-[#789BFF] hover:text-black font-medium">
+              <Link
+                to="/cxos"
+                className="text-[#789BFF] hover:text-black font-medium"
+              >
                 View All
               </Link>
             </div>
 
-            <div className="space-y-6">
+            {/* Interview Cards */}
+            <div className="space-y-8">
               {interviewArticles.map((article) => (
-               <div
-  key={article.id}
-  className="bg-[#E6EDFF] hover:bg-[#d0dbff] transition-colors duration-300 rounded-md overflow-hidden flex flex-col md:flex-row h-[18rem] md:h-[16rem]"
->
-
-                  <div className="w-full md:w-1/3 h-52 md:h-auto bg-gray-200 flex-shrink-0">
+                <div
+                  key={article.id}
+                  className="bg-[#E6EDFF] hover:bg-[#d0dbff] transition-colors duration-300 rounded-md overflow-hidden flex flex-col sm:flex-row"
+                >
+                  <div className="w-full sm:w-1/3 h-52 sm:h-auto bg-gray-200 flex-shrink-0">
                     <img
                       src={article.image}
                       alt={article.title}
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="p-5 flex flex-col justify-between flex-grow">
+                  <div className="p-4 flex flex-col justify-between flex-grow">
                     <div>
                       <span className="text-xs font-semibold text-[#789BFF] uppercase">
                         {article.category}
                       </span>
-                      <h3 className="text-base font-bold text-black mt-1 mb-2 leading-snug whitespace-pre-line">
+                      <h3 className="text-base font-bold text-black mt-1 mb-2 leading-snug">
                         {article.title}
                       </h3>
                       <p className="text-sm mb-2 font-medium text-gray-700">
                         <em>(Coming soon...)</em>
                       </p>
-                      <p className="text-black text-sm mb-3 line-clamp-3">
+                      <p className="text-black text-sm mb-2">
                         {article.description}
                       </p>
                     </div>
@@ -121,10 +125,12 @@ const CXO = () => {
 
         {/* Sidebar */}
         <div className="lg:col-span-1 space-y-8">
-          {/* Tags Section */}
+          {/* Tags */}
           <div className="bg-white p-6 rounded-md shadow-sm">
-            <div className="h-[1px] w-full bg-black mb-4"></div>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">POPULAR TAGS</h3>
+            <div className="h-[1px] w-full bg-black mb-4" />
+            <h3 className="text-xl font-bold text-gray-800 mb-4">
+              POPULAR TAGS
+            </h3>
             <div className="flex flex-wrap gap-2">
               {popularTags.map((tag, index) => (
                 <span
@@ -137,10 +143,12 @@ const CXO = () => {
             </div>
           </div>
 
-          {/* Featured Articles Section */}
+          {/* Featured Articles */}
           <div className="bg-white p-6 rounded-md shadow-sm">
-            <div className="h-[1px] w-full bg-black mb-4"></div>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">FEATURED ARTICLES</h3>
+            <div className="h-[1px] w-full bg-black mb-4" />
+            <h3 className="text-xl font-bold text-gray-800 mb-4">
+              FEATURED ARTICLES
+            </h3>
             <div className="space-y-4">
               {featuredArticles.map((article) => (
                 <div key={article.id} className="flex items-start gap-3">
@@ -159,7 +167,10 @@ const CXO = () => {
                 </div>
               ))}
             </div>
-            <Link to="/articles" className="hover:underline text-sm mt-4 block text-blue-500">
+            <Link
+              to="/articles"
+              className="hover:underline text-sm mt-4 block text-blue-500"
+            >
               See more
             </Link>
           </div>

@@ -154,7 +154,7 @@ const Header = () => {
 
       {/* Main Nav */}
       <div className="container mx-auto px-4 py-3 flex items-center justify-between space-x-6">
-        <a href="/" className="cursor-default"><img src="/Exec-Stream Logo.svg" alt="ExecStream" className="h-20 w-auto" /></a>
+        <a href="/" className="cursor-default"><img src="/Exec-Stream Logo.svg" alt="ExecStream" className="h-20" /></a>
         <div className="md:hidden flex items-center">
           <button onClick={toggleMobileMenu} className="text-gray-900 focus:outline-none">
             {isMobileMenuOpen ? <HiOutlineX size={24} /> : <HiOutlineMenu size={24} />}
@@ -212,7 +212,15 @@ const Header = () => {
         <div className="hidden lg:flex flex-col items-end text-xs space-y-1">
           <span className="uppercase tracking-wide text-gray-500">{formatDate()}</span>
           <div className="flex space-x-2 pt-1">{/* social icons repeated */}</div>
+          <div className="flex space-x-2 pt-1 md:pt-0">
+            <a href="https://www.linkedin.com/company/execstream" target="_blank"><FaLinkedinIn size={14} className="text-gray-500 hover:text-[#789BFF]" /></a>
+            <a href="https://www.facebook.com/execstream" target="_blank"><FaFacebookF size={14} className="text-gray-500 hover:text-[#789BFF]" /></a>
+            <a href="https://www.instagram.com/execstream/" target="_blank"><FaInstagram size={14} className="text-gray-500 hover:text-[#789BFF]" /></a>
+            <a href="https://www.youtube.com/@execstream" target="_blank"><FaYoutube size={14} className="text-gray-500 hover:text-[#789BFF]" /></a>
+            <a href="https://x.com/ExecStream" target="_blank"><FaXTwitter size={14} className="text-gray-500 hover:text-[#789BFF]" /></a>
+          </div>
         </div>
+        
       </div>
 
       {/* Mobile Menu */}

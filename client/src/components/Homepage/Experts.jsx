@@ -82,7 +82,7 @@ const Experts = () => {
             className="italic text-[#789BFF] font-light text-6xl"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            top people at each industry
+            top people in each industry
           </span>
         </h2>
 

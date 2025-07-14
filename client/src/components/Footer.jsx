@@ -48,7 +48,7 @@ const [email, setEmail] = useState("");
             <li classname="text-sm"><Link to="/function" className="hover:text-[#789BFF]">Explore by Function</Link></li>
             <li classname="text-sm"><Link to="/cxo" className="hover:text-[#789BFF]">Explore by CXO</Link></li>
             <li className="pt-2 font-semibold text-[#789BFF]">Categories</li>
-            <li classname="text-sm"><Link to="/enterprise-signals" className="hover:text-[#789BFF]">Enterprise Signals</Link></li>
+            <li classname="text-sm"><Link to="/news-&-analysis" className="hover:text-[#789BFF]">News & Analysis</Link></li>
             <li classname="text-sm"><Link to="/articles" className="hover:text-[#789BFF]">Articles</Link></li>
           </ul>
         </div>

@@ -48,23 +48,27 @@ const CXO = () => {
     "INTERNATIONAL",
   ];
 
-  const featuredArticles = [
-    {
-      id: 1,
-      image: "/featured1.svg",
-      title: "The Taboo lifts on discussing Biden's Age",
-    },
-    {
-      id: 2,
-      image: "/featured2.svg",
-      title: "This Year, Florida's not a Swing State",
-    },
-    {
-      id: 3,
-      image: "/featured3.svg",
-      title: "Why do central banks raise interest rates?",
-    },
-  ];
+ const featuredArticles = [
+  {
+    id: 1,
+    image: "/ES-1.jpg",
+    title: "TRAI-RBI Spam Call Control Signal..",
+    path: "/enterprise-signals/enterprise/1",
+  },
+  {
+    id: 2,
+    image: "/ES-2.webp",
+    title: "When Contracts Collide With Geopolitics",
+    path: "/enterprise-signals/enterprise/2",
+  },
+  {
+    id: 3,
+    image: "/ES-3.jpg",
+    title: "India's ESG Bonds: Debt, Disclosures, and the...",
+    path: "/enterprise-signals/enterprise/3",
+  },
+];
+
 
   return (
     <div className="w-full px-4 md:px-6 lg:px-8 mt-5">
@@ -151,15 +155,19 @@ const CXO = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <p className="text-gray-800 text-sm font-medium leading-snug hover:text-blue-600 cursor-pointer">
-                    {article.title}
-                  </p>
+                <Link to={article.path}>
+  <p className="text-gray-800 text-sm font-medium leading-snug hover:text-[#789BFF] cursor-pointer">
+    {article.title}
+  </p>
+</Link>
+
                 </div>
               ))}
             </div>
-            <a href="#" className=" hover:underline text-sm mt-4 block">
-              See more
-            </a>
+           <Link to="/articles" className="hover:underline text-sm mt-4 block">
+  See more
+</Link>
+
           </div>
 
          <SlidingBanner />

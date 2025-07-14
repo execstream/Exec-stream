@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Themes = () => {
   const [selectedCategory, setSelectedCategory] = useState('LEGAL');
@@ -11,39 +12,43 @@ const Themes = () => {
   const articles = [
     {
       id: 1,
-      image: '/Cat1.svg', 
-      category: 'HR',
-      title: 'What Your Relationship With Stock Market Says About You',
-      author: 'Author',
-      date: 'June 28, 2021',
-      description: 'Cursus iaculis etiam in In nullam donec sem sed consequat scelerisque nibh amet, massa egestas risus, gravida vel amet, imperdiet...'
+      image: '/Shagoofa Rashid Khan.jpeg', 
+      category: 'Legal',
+      title: 'Risk Management Playbook for Alternative Investment Funds',
+      author: 'Shagoofa Rashid Khan',
+      date: 'July 9, 2025',
+      description: 'The Alternative Investment Funds (AIF) industry has witnessed tremendous growth in the last decade on the back of quality ...',
+      path:'articles/article/9'
     },
     {
       id: 2,
-      image: '/Cat2.svg', 
-      category: 'LEGAL',
-      title: 'How I Learned to Stop Worrying and Love Stock Market',
-      author: 'Author',
-      date: 'June 28, 2021',
-      description: 'Cursus iaculis etiam in In nullam donec sem sed consequat scelerisque nibh amet, massa egestas risus, gravida vel amet, imperdiet...'
+      image: '/Rohitaashv Sinha.jpeg', 
+      category: 'Employment',
+      title: 'How to Effectively Negotiate with Trade Unions in India',
+      author: 'Rohitaashv Sinha',
+      date: 'July 14, 2025',
+      description: ' Negotiating with trade unions in India requires a thorough understanding of the legal landscape, effective communication...',
+     path:'articles/article/7'
     },
     {
       id: 3,
-      image: '/Cat3.svg', 
-      category: 'STOCK MARKET',
-      title: 'Why Stock Market Affects Men and Women Differently',
-      author: 'Author',
-      date: 'June 28, 2021',
-      description: 'Cursus iaculis etiam in In nullam donec sem sed consequat scelerisque nibh amet, massa egestas risus, gravida vel amet, imperdiet...'
+      image: '/ES-1.jpg', 
+      category: 'Info Sec',
+      title: 'TRAI-RBI Spam Call Control Signal: When Consent Becomes...',
+      author: 'Biplab Sengupta',
+      date: 'July 14, 2025',
+      description: " This isn't just about stopping spam call, it's about rewiring how organisations prove consent, control communication, and own their outreach systems.",
+     path:'enterprise-signals/enterprise/1'
     },
     {
       id: 4, 
-      image: '/Cat1.svg', 
-      category: 'FINANCE',
-      title: 'Global Markets: What to Expect in the Coming Quarter',
-      author: 'Another Author',
-      date: 'July 1, 2021',
-      description: 'Donec nec massa eget sem malesuada viverra. Sed sit amet mi ipsum. Nunc nec elit eget odio finibus interdum.'
+      image: '/ES-2.webp', 
+      category: 'Legal',
+      title: 'When Contracts Collide With Geopolitics',
+      author: 'Biplab Sengupta',
+      date: 'July 14, 2025',
+      description: " India's Rare Earth Disruption Is a Legal, Supply Chain, and Strategic Alarm - Not Just a Trade Blip.",
+     path:'enterprise-signals/enterprise/2'
     },
   ];
   return (
@@ -80,12 +85,13 @@ const Themes = () => {
       
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
   {articles.map((article) => (
-    <div
+    <Link
+      to={article.path}
       key={article.id}
       className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 group hover:shadow-lg"
     >
       <div className="w-full h-48 overflow-hidden">
-        <img src={article.image} alt={article.title} className="w-full h-full object-cover" />
+        <img src={article.image} alt={article.title} className="w-full h-full object-contain" />
       </div>
       <div className="p-4">
         <span className="text-xs font-semibold text-[#789BFF] uppercase mb-1 block">
@@ -101,7 +107,7 @@ const Themes = () => {
           {article.description}
         </p>
       </div>
-    </div>
+    </Link>
   ))}
 </div>
 

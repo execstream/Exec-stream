@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 const categories = [
   'All',
   'LEGAL',
-  'RISK&COMPLIANCE',
+  'RISK & COMPLIANCE',
   'FINANCE',
   'HR',
   'SUSTAINABILITY',
   'INFORMATION SECURITY',
-  'CISO OFFICE',
+ 
 ];
 
 const articles = [

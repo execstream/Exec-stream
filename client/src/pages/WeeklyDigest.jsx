@@ -49,7 +49,7 @@ const WeeklyDigest = () => {
             <img
               src={item.thumbnail}
               alt={item.title}
-              className="w-full h-48 object-cover"
+              className="w-full h-48 object-contain"
             />
             <div className="p-4">
               <h2 className="text-lg font-semibold">{item.title}</h2>

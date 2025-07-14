@@ -103,25 +103,27 @@ const Functions = () => {
     },
   ];
 
-  const industryCards = [
-    {
-      category: "LEGAL",
-      title:
-        "France's Jupiter may be about to discover a culture of compromise",
-      image: "/Industry1.svg",
-    },
-    {
-      category: "DIGITAL",
-      title:
-        "France's Jupiter may be about to discover a culture of compromise",
-      image: "/Industry2.svg",
-    },
-    {
-      category: "ELECTIONS",
-      title: "'A World without Risk'",
-      image: "/Industry3.svg",
-    },
-  ];
+ const industryCards = [
+  {
+    category: "BFSI",
+    title: "Finfluencers in India: The Do's and Don’ts under SEBI’s Regulatory Framework",
+    image: "Tanvi Muraleedharan.jpeg",
+    path: "/articles/article/6",
+  },
+  {
+    category: "Healthcare",
+    title: "The Invisible Risk in Digital Diagnostics: Who Regulates AI-Powered Medical Devices in India?",
+    image: "/Biplab Lenin.jpeg",
+    path: "/articles/article/1",
+  },
+  {
+    category: "E-Commerce",
+    title: "Looks Like Content, Acts Like Ads: The Legal Risk in E-Commerce's Influencer",
+    image: "/Karishma.jpeg",
+    path: "/articles/article/5",
+  },
+];
+
 
   const speakers = [
     { name: "Nishant Shah", avatar: "/Speaker1.svg" },
@@ -230,27 +232,24 @@ link: 'https://forms.gle/eNAMquJguwTYkCiS8',
            
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 divide-x divide-gray-200">
                 {industryCards.map((card, index) => (
-                  <div
-                    key={index}
-                  
-                    className="overflow-hidden hover:shadow-md transition-shadow duration-300"
-                  >
-                    <img
-                      src={card.image}
-                      alt={card.title}
-                      className="w-full h-40 object-cover"
-                    />
-                    <div className="p-4">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-[#789BFF]">
-                        {" "}
-                    
-                        {card.category}
-                      </span>
-                      <h3 className="text-lg font-medium text-gray-900 mt-2 leading-tight">
-                        {card.title}
-                      </h3>
-                    </div>
-                  </div>
+                 <Link to={card.path} key={index}>
+  <div className="overflow-hidden hover:shadow-md transition-shadow duration-300">
+    <img
+      src={card.image}
+      alt={card.title}
+      className="w-full h-40 object-contain"
+    />
+    <div className="p-4">
+      <span className="text-xs font-semibold uppercase tracking-wider text-[#789BFF]">
+        {card.category}
+      </span>
+      <h3 className="text-lg font-medium text-gray-900 mt-2 leading-tight">
+        {card.title}
+      </h3>
+    </div>
+  </div>
+</Link>
+
                 ))}
               </div>
             </div>

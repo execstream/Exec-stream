@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 
 import MostPopular from "./MostPopular";
 import ArticleFooter from "./ArticleFooter";
+import Sidebar from "./Sidebar";
+import SlidingBanner from "../Homepage/SlidingBanner";
 
 const popularTags = [
   "LEGAL",
@@ -377,47 +379,14 @@ const Article2 = () => {
             <MostPopular />
           </div>
 
-          <div className="bg-white rounded-lg p-4 shadow-md">
-            <h3 className="text-lg font-bold mb-2">Subscribe Us</h3>
-            <p className="text-sm text-gray-600 mb-3">
-              Get Subscribe To Our Latest News & Update
-            </p>
-            <input
-              type="email"
-              placeholder="Email address"
-              className="w-full px-3 py-2 border border-gray-300 rounded mb-3 focus:outline-none"
-            />
-            <button className="w-full bg-[#789BFF] text-white py-2 rounded-full hover:bg-black">
-              Subscribe
-            </button>
-          </div>
+           <div className="flex">
+      <Sidebar />
+    </div>
 
-          <div className="bg-white p-6 mt-6">
-            <div className="h-[1px] w-full bg-black mb-4"></div>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">
-              POPULAR TAGS
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {popularTags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="px-2 py-1 text-sm border border-gray-300 text-gray-700 cursor-pointer hover:text-[#789BFF] transition-colors duration-200"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
 
-         
+         <SlidingBanner />
 
-          <div className="bg-white p-6 mt-6">
-            <img
-              src="/masterclass-banner.svg"
-              alt="Advance Masterclass on Data Privacy & Tech Law"
-              className="w-full rounded-md"
-            />
-          </div>
+          
 
           <ArticleFooter />
         </aside>

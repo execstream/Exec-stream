@@ -183,7 +183,7 @@ const Header = () => {
 
    
         <nav className="hidden md:flex space-x-4 lg:space-x-6 text-base font-bold text-gray-900 relative z-50">
-          {["News & Analysis", "Articles", "CXOs", "Function", "Speakers","Weekly Digest"].map((item) => (
+          {["News & Analysis", "Articles", "Weekly Digest", "Experts","CXOs", "Function",].map((item) => (
             <div
               key={item}
               className="relative"
@@ -282,7 +282,7 @@ const Header = () => {
           <div className="container mx-auto px-4 flex flex-col space-y-2">
          
             <nav className="flex flex-col space-y-2 text-base font-bold text-gray-900">
-              {["News & Analysis", "Articles", "CXOs", "Function", "Speakers"].map((item) => (
+              {["News & Analysis", "Articles","Weekly Digest", "Experts","CXOs", "Function", ].map((item) => (
                 <div key={item}>
                   <a
                     href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}

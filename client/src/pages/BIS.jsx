@@ -11,7 +11,7 @@ const updates = [
     id: 2,
     title: "Recent Updates on the Machinery and Electrical Equipment Safety (Omnibus Technical Regulation) Order, 2024",
    date: "July 12, 2025",
-    pdf: "/Machinery.pdf",
+    pdf: "/BIS.pdf",
   },
 ];
 
@@ -48,7 +48,7 @@ const BIS = () => {
         <p className="text-sm text-gray-600">{selected.date}</p>
       </div>
       
-      {/* Download Button */}
+    
       <a 
         href={selected.pdf}
         download

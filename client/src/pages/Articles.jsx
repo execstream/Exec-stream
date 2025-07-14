@@ -13,15 +13,15 @@ const categories = [
 
 
 const articles = [
-  
-
   {
-    id: 1,
-    title: 'The Invisible Risk in Digital Diagnostics: Who Regulates AI-Powered Medical Devices in India?',
-    category: ['Legal', 'Medical Devices'],
-    image: '/medical.jpg',
-    authors: [{ name: 'Biplab Lenin', image: '/Biplab Lenin.jpeg' }],
+    id: 9,
+    title: 'Risk Management Playbook for Alternative Investment Funds',
+    category: ['Legal', 'Fund Governance'],
+    image: '/Shagoofa Rashid Khan.svg',
+    authors: [{ name: 'Shagoofa Rashid Khan', image: '/Shagoofa Rashid Khan.jpeg' }],
   },
+
+  
   {
     id: 2,
     title: 'India-UK FTA: A blueprint trade agreement for the future',
@@ -84,14 +84,14 @@ const articles = [
     image: '/Rahul Sundaram.webp',
     authors: [{ name: 'Rahul Sundaram', image: '/Rahul Sundaram.webp' }],
   },
-  {
-    id: 9,
-    title: 'Risk Management Playbook for Alternative Investment Funds',
-    category: ['Legal', 'Fund Governance'],
-    image: '/Shagoofa Rashid Khan.svg',
-    authors: [{ name: 'Shagoofa Rashid Khan', image: '/Shagoofa Rashid Khan.jpeg' }],
+  
+ {
+    id: 1,
+    title: 'The Invisible Risk in Digital Diagnostics: Who Regulates AI-Powered Medical Devices in India?',
+    category: ['Legal', 'Medical Devices'],
+    image: '/medical.jpg',
+    authors: [{ name: 'Biplab Lenin', image: '/Biplab Lenin.jpeg' }],
   },
- 
 
 ];
 
@@ -209,7 +209,6 @@ const Articles = () => {
 
 const renderCard = (article) => {
   const isTallCard = article.isTall;
-  const tallCardHeightClass = 'h-[calc(2*18rem+1.5rem)]';
 
   const bgImage =
     article?.authors?.[0]?.image?.trim() ||
@@ -217,12 +216,12 @@ const renderCard = (article) => {
 
   return (
     <Link to={`/articles/article/${article.id}`} key={article.id}>
-     <div
-  className={`relative rounded-xl overflow-hidden shadow-lg group border border-black ${
-    isTallCard ? tallCardHeightClass : 'h-72'
-  }`}
->
-
+      <div
+        className={`relative rounded-xl overflow-hidden shadow-lg group border border-black
+        h-72
+        ${isTallCard ? 'lg:h-[calc(2*18rem+1.5rem)]' : 'lg:h-72'}
+      `}
+      >
         {/* Background Image */}
         <img
           src={bgImage}
@@ -238,7 +237,9 @@ const renderCard = (article) => {
         <div
           className={`absolute bottom-0 left-0 w-full bg-black/50 text-white p-4
           group-hover:h-full transition-all duration-300 ease-in-out
-          flex flex-col justify-end ${isTallCard ? 'h-64' : 'h-48'}`}
+          flex flex-col justify-end
+          h-48 ${isTallCard ? 'lg:h-64' : 'lg:h-48'}
+        `}
         >
           <h3 className="text-lg font-semibold group-hover:text-xl transition-all duration-300">
             {article.title}
@@ -274,5 +275,6 @@ const renderCard = (article) => {
     </Link>
   );
 };
+
 
 export default Articles;

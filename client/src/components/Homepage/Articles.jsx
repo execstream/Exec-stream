@@ -12,18 +12,18 @@ const truncateWords = (text, wordLimit) => {
 const articles = [
   {
     id: 1,
-    title: 'The Invisible Risk in Digital Diagnostics: Who Regulates AI-Powered Medical Devices in India?',
-    category: ['Legal', 'Medical Devices'],
+    title: 'Risk Management Playbook for Alternative Investment Funds',
+    category: ['Legal', 'Fund Governance'],
     image: '/medical.jpg',
     authors: [
       {
-        name: 'Biplab Lenin',
-        image: '/Biplab Lenin.jpeg',
-        designation: 'Partner(Pharma, Healthcare & Life Sciences)',
-        company: 'Cyril Amarchand Mangaldas',
+        name: 'Shagoofa Rashid Khan',
+        image: '/Shagoofa Rashid Khan.jpeg',
+        designation: 'Senior Partner ',
+        company: 'AZB & Partners',
       }
     ],
-    path: '/articles/article/1',
+    path: '/articles/article/9',
   },
   {
     id: 2,
@@ -31,10 +31,8 @@ const articles = [
     category: ['Finance', 'Foreign Trade'],
     image: '/Parth.jpg',
     authors: [
-      { name: 'Parth S. Shah', image: 'Parth.jpg', designation: 'Director(Global Trade Advisory)',
-        company: 'Delloite Touche Tohmatsu India', },
-      { name: 'Shweta Kushe', image: 'Shweta.jpg', designation: 'Assistant Manager(Global Trade Advisory)',
-        company: 'Delloite Touche Tohmatsu India', }
+      { name: 'Parth S. Shah', image: 'Parth.jpg', designation: 'Director(Global Trade Advisory)', company: 'Delloite Touche Tohmatsu India' },
+      { name: 'Shweta Kushe', image: 'Shweta.jpg', designation: 'Assistant Manager(Global Trade Advisory)', company: 'Delloite Touche Tohmatsu India' }
     ],
     path: '/articles/article/2',
   },
@@ -44,10 +42,8 @@ const articles = [
     category: ['Info Sec', 'Cloud Configurations'],
     image: '/cloud.jpg',
     authors: [
-      { name: 'Shrikrishna Dikshit', image: 'Shrikrishna Dikshit.jpg',designation: 'Partner(Digital & Cyber Security)',
-        company: 'Baker Tilly ASA India LLP',  },
-      { name: 'Rachit Shukla', image: 'Rachit Shukla.jpeg',designation: 'Executive Partner(Digital & Cyber Security)',
-        company: 'Baker Tilly ASA India LLP',  }
+      { name: 'Shrikrishna Dikshit', image: 'Shrikrishna Dikshit.jpg', designation: 'Partner(Digital & Cyber Security)', company: 'Baker Tilly ASA India LLP' },
+      { name: 'Rachit Shukla', image: 'Rachit Shukla.jpeg', designation: 'Executive Partner(Digital & Cyber Security)', company: 'Baker Tilly ASA India LLP' }
     ],
     path: '/articles/article/3',
   },
@@ -56,8 +52,7 @@ const articles = [
     title: 'Labour, Employment, and HR Issues in M&A Transactions: Navigating People Risks in Deal-Making',
     category: ['Legal', 'Employment'],
     image: '/legal.jpg',
-    authors: [{ name: 'Raunak Singh', image: 'Raunak Singh.jpeg',designation: 'Partner',
-        company: 'Anoma Legal', }],
+    authors: [{ name: 'Raunak Singh', image: 'Raunak Singh.jpeg', designation: 'Partner', company: 'Anoma Legal' }],
     path: '/articles/article/4',
   },
   {
@@ -66,10 +61,8 @@ const articles = [
     category: ['Legal', 'E Commerce'],
     image: '/Karishma.jpeg',
     authors: [
-      { name: 'Sumit Ghoshal', image: '/Sumit Ghoshal.webp',designation: 'Senior Partner',
-        company: 'AZB & Partners', },
-      { name: 'Karishma', image: '/Karishma.jpeg',designation: 'Senior Associate',
-        company: 'AZB & Partners', }
+      { name: 'Sumit Ghoshal', image: '/Sumit Ghoshal.webp', designation: 'Senior Partner', company: 'AZB & Partners' },
+      { name: 'Karishma', image: '/Karishma.jpeg', designation: 'Senior Associate', company: 'AZB & Partners' }
     ],
     path: '/articles/article/5',
   },
@@ -79,10 +72,8 @@ const articles = [
     category: ['Legal', 'Consumer Protection'],
     image: '/Utkarsha Sharma .jpg',
     authors: [
-      { name: 'Tanvi Muraleedharan', image: '/Tanvi Muraleedharan.jpeg',designation: 'Partner',
-        company: 'LawKNIT Partners',  },
-      { name: 'Utkarsha Sharma', image: '/Utkarsha Sharma .jpg',designation: 'Senior Associate',
-        company: 'LawKNIT Partners',  }
+      { name: 'Tanvi Muraleedharan', image: '/Tanvi Muraleedharan.jpeg', designation: 'Partner', company: 'LawKNIT Partners' },
+      { name: 'Utkarsha Sharma', image: '/Utkarsha Sharma .jpg', designation: 'Senior Associate', company: 'LawKNIT Partners' }
     ],
     path: '/articles/article/6',
   },
@@ -91,8 +82,7 @@ const articles = [
     title: 'How to Effectively Negotiate with Trade Unions in India',
     category: ['Legal', 'Employment', 'GC', 'CHRO'],
     image: '/Rohitaashv Sinha.svg',
-    authors: [{ name: 'Rohitaashv Sinha', image: '/Rohitaashv Sinha.jpeg',designation: 'Partner(Labour & Employment)',
-        company: 'King Stubb & Kasiva',  }],
+    authors: [{ name: 'Rohitaashv Sinha', image: '/Rohitaashv Sinha.jpeg', designation: 'Partner(Labour & Employment)', company: 'King Stubb & Kasiva' }],
     path: '/articles/article/7',
   },
   {
@@ -100,12 +90,10 @@ const articles = [
     title: "From Shelf to Scooter: The Legal Mess Behind India's 10-Minute Commerce Boom",
     category: ['Legal', 'E Commerce'],
     image: '/Rahul Sundaram.webp',
-    authors: [{ name: 'Rahul Sundaram', image: '/Rahul Sundaram.webp',designation: 'Partner',
-        company: 'Indialaw LLP',  }],
+    authors: [{ name: 'Rahul Sundaram', image: '/Rahul Sundaram.webp', designation: 'Partner', company: 'Indialaw LLP' }],
     path: '/articles/article/8',
   }
 ];
-
 
 const getRows = (articles) => {
   const rows = [];
@@ -126,17 +114,13 @@ const Articles = () => {
         {articleRows.map((row, rowIndex) => (
           <div
             key={rowIndex}
-            className={`${
-              row.length < 4
-                ? "flex justify-center gap-8 flex-wrap"
-                : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
-            }`}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
           >
             {row.map((article) => (
               <Link
                 key={article.id}
                 to={article.path || "#"}
-                className="w-[18rem] bg-white rounded-xl shadow-md overflow-hidden flex flex-col transition hover:-translate-y-1 hover:shadow-xl duration-300 cursor-pointer"
+                className="w-full max-w-sm bg-white rounded-xl shadow-md overflow-hidden flex flex-col transition hover:-translate-y-1 hover:shadow-xl duration-300 cursor-pointer mx-auto"
               >
                 <div className="p-4">
                   <div className="w-full aspect-square rounded-md overflow-hidden">
@@ -145,8 +129,7 @@ const Articles = () => {
                       alt={article.authors?.[0]?.name || "Author"}
                       className="w-full h-full object-cover bg-white"
                       onError={(e) =>
-                        (e.currentTarget.src =
-                          "https://via.placeholder.com/300x300?text=Author")
+                        (e.currentTarget.src = "https://via.placeholder.com/300x300?text=Author")
                       }
                     />
                   </div>
@@ -167,17 +150,16 @@ const Articles = () => {
                         {article.authors[0].company}
                       </p>
                     )}
-                   <h3 className="text-base font-bold text-gray-900 leading-snug my-3">
-  {truncateWords(article.title, 15)}
-</h3>
-
+                    <h3 className="text-base font-bold text-gray-900 leading-snug my-3">
+                      {truncateWords(article.title, 15)}
+                    </h3>
                   </div>
 
                   <div className="flex flex-wrap gap-2 mt-4">
                     {article.category.slice(0, 2).map((tag, idx) => (
                       <span
                         key={idx}
-                        className="text-xs font-bold px-2 py-1 bg-[#789BFF] text-white "
+                        className="text-xs font-bold px-2 py-1 bg-[#789BFF] text-white rounded"
                       >
                         {tag}
                       </span>

@@ -155,19 +155,20 @@ const Articles = () => {
 };
 
 const renderCard = (article) => {
-  const tallCardHeightClass = 'h-[calc(2*18rem+1.5rem)]';
   const isTallCard = article.isTall;
+  const baseHeightClass = 'h-72'; // All cards same height on mobile
+  const tallCardHeightClass = 'lg:h-[calc(2*18rem+1.5rem)]';
+  const normalCardHeightClass = 'lg:h-72';
+
+  const combinedHeightClass = `${baseHeightClass} ${isTallCard ? tallCardHeightClass : normalCardHeightClass}`;
 
   const bgImage =
-    article.image?.trim() ||
-    'https://via.placeholder.com/600x400?text=No+Image';
+    article.image?.trim() || 'https://via.placeholder.com/600x400?text=No+Image';
 
   return (
     <Link to={`/enterprise-signals/enterprise/${article.id}`} key={article.id}>
       <div
-        className={`relative rounded-xl overflow-hidden shadow-md bg-cover bg-center group ${
-          isTallCard ? tallCardHeightClass : 'h-72'
-        }`}
+        className={`relative rounded-xl overflow-hidden shadow-md bg-cover bg-center group ${combinedHeightClass}`}
         style={{
           backgroundImage: `url('${bgImage}')`,
         }}
@@ -177,7 +178,7 @@ const renderCard = (article) => {
         }}
       >
         <div className="absolute bottom-0 left-0 w-full bg-black/60 text-white p-4
-          h-48 group-hover:h-full transition-all duration-300 ease-in-out
+          h-48 lg:h-48 group-hover:h-full transition-all duration-300 ease-in-out
           flex flex-col justify-end">
           <h3 className="text-lg font-semibold group-hover:text-xl transition-all duration-300 ease-in-out">
             {article.title}
@@ -213,6 +214,7 @@ const renderCard = (article) => {
     </Link>
   );
 };
+
 
 
 export default Articles;

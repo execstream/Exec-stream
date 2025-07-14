@@ -171,7 +171,7 @@ const Header = () => {
 
         {/* Logo */}
         <a href="/" className="cursor-default">
-          <img src="Exec-Stream Logo.svg" alt="ExecStream" className="h-20" />
+          <img src="/Exec-Stream Logo.svg" alt="ExecStream" className="h-20" />
         </a>
 
       

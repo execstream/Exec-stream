@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Experts = () => {
@@ -15,30 +15,24 @@ const Experts = () => {
     { id: 10, image: "/Jay Gandhi.jpg" },
   ];
 
-  const experts = [...baseExperts, ...baseExperts, ...baseExperts];
-  const CARD_WIDTH = 256;
-  const GAP = 32;
-
+  const experts = [...baseExperts, ...baseExperts]; // Duplicate for looping
   const scrollRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(baseExperts.length);
+  const scrollAmount = useRef(0);
 
+  // Auto-scrolling effect
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
-    const scrollTo = currentIndex * (CARD_WIDTH + GAP);
-    container.scrollLeft = scrollTo;
-  }, [currentIndex]);
-
-  useEffect(() => {
-    const container = scrollRef.current;
-    const scrollAmount = (CARD_WIDTH + GAP) * baseExperts.length;
 
     const scroll = () => {
-      if (!container) return;
-      container.scrollLeft += 1;
-      if (container.scrollLeft >= 2 * scrollAmount) {
-        container.scrollLeft = scrollAmount;
+      scrollAmount.current += 0.5;
+      container.scrollLeft = scrollAmount.current;
+
+      if (scrollAmount.current >= container.scrollWidth / 2) {
+        scrollAmount.current = 0;
+        container.scrollLeft = 0;
       }
+
       requestAnimationFrame(scroll);
     };
 
@@ -46,13 +40,17 @@ const Experts = () => {
     return () => cancelAnimationFrame(id);
   }, []);
 
+  // Manual scroll buttons
   const scrollByCard = (dir) => {
-    let next = currentIndex + (dir === "right" ? 1 : -1);
-    if (next >= baseExperts.length * 2) next = baseExperts.length;
-    if (next < baseExperts.length) next = baseExperts.length * 2 - 1;
-    setCurrentIndex(next);
-    scrollRef.current?.scrollTo({
-      left: next * (CARD_WIDTH + GAP),
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const CARD_WIDTH = 256;
+    const GAP = 32;
+    const amount = CARD_WIDTH + GAP;
+
+    container.scrollBy({
+      left: dir === "right" ? amount : -amount,
       behavior: "smooth",
     });
   };
@@ -73,15 +71,9 @@ const Experts = () => {
           <h3 className="text-[#789BFF] text-2xl font-bold">Our Experts</h3>
         </div>
 
-        <h2
-          className="text-3xl md:text-4xl font-bold mb-12 leading-snug text-white"
-          style={{ fontFamily: "'Inter', sans-serif" }}
-        >
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 leading-snug text-white">
           Partnered with most of the <br />
-          <span
-            className="italic text-[#789BFF] font-light text-6xl"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
+          <span className="italic text-[#789BFF] font-light text-6xl">
             top people in each industry
           </span>
         </h2>
@@ -96,16 +88,20 @@ const Experts = () => {
             <IoIosArrowBack size={24} className="text-white" />
           </button>
 
-          {/* Scrollable Cards */}
+          {/* Scrollable Expert Cards */}
           <div
             ref={scrollRef}
-            className="flex overflow-x-scroll no-scrollbar gap-8 pb-4 px-4"
-            style={{ scrollBehavior: "smooth" }}
+            tabIndex={0}
+            className="flex overflow-x-hidden whitespace-nowrap gap-8 px-4 no-scrollbar"
+            style={{
+              WebkitOverflowScrolling: "touch",
+              touchAction: "pan-x",
+            }}
           >
             {experts.map((expert, i) => (
               <div
                 key={`${expert.id}-${i}`}
-                className="flex-none w-64 h-100 rounded-xl overflow-hidden shadow-xl   bg-white"
+                className="w-64 h-80 flex-shrink-0 rounded-xl overflow-hidden shadow-xl bg-white"
               >
                 <img
                   src={expert.image}

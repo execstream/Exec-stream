@@ -94,7 +94,7 @@ const CXO = () => {
                   key={article.id}
                   className="bg-[#E6EDFF] hover:bg-[#d0dbff] transition-colors duration-300 rounded-md overflow-hidden flex flex-col sm:flex-row"
                 >
-                  <div className="w-full sm:w-1/3 h-52 sm:h-auto bg-gray-200 flex-shrink-0">
+                  <div className="w-full sm:w-1/3 md:max-h-52 sm:h-auto bg-gray-200 flex-shrink-0">
                     <img
                       src={article.image}
                       alt={article.title}

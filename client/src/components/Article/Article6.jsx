@@ -28,7 +28,7 @@ const Article6 = () => {
               {
                 name: "Tanvi Muraleedharan ",
                 designation: "Partner \n LawKNIT Partners",
-                image: "/Tanvi Muraleedharan.jpeg",
+                image: "/Tanvi.jpg",
               },
               {
                 name: "Utkarsha Sharma",

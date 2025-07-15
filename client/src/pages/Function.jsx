@@ -104,7 +104,7 @@ const articles = [
     category: ["Legal", "Consumer Protection"],
     image: "/Tanvi Muraleedharan.jpeg",
     authors: [
-      { name: "Tanvi Muraleedharan ", image: "/Tanvi Muraleedharan.jpeg" },
+      { name: "Tanvi Muraleedharan ", image: "/Tanvi.jpg" },
       { name: "Utkarsha Sharma ", image: "/Utkarsha Sharma .jpg" },
     ],
     path: "/articles/article/6",

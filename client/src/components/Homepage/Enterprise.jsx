@@ -55,7 +55,7 @@ const LatestNews = () => {
         />
       </div>
       <Link
-        to="/enterprise-signals"
+        to="/news-&-analysis"
         className="text-[#789BFF] hover:text-black ml-4 whitespace-nowrap"
       >
         View All

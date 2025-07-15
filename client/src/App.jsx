@@ -27,12 +27,15 @@ import EnterpriseSignals from "./pages/EnterpriseSignals";
 import Enterprise2 from "./components/Enterprise2";
 import Enterprise3 from "./components/Enterprise3";
 import Enterprise4 from "./components/Enterprise4";
+import Enterprise5 from "./components/Enterprise5";
 import Function from "./pages/Function";
 import Contact from "./pages/Contact";
 import WeeklyDigest from "./pages/WeeklyDigest";
 import BIS from "./pages/BIS";
 import Customs from "./pages/Customs";
 import Fintech from "./pages/Fintech";
+import Article10 from "./components/Article/Article10";
+import Article11 from "./components/Article/Article11";
 const App = () => {
    useEffect(() => {
     const handleRightClick = (e) => e.preventDefault();
@@ -68,6 +71,8 @@ const App = () => {
           <Route path="/articles/article/7" element={<Article7 />} />
           <Route path="/articles/article/8" element={<Article8 />} />
           <Route path="/articles/article/9" element={<Article9 />} />
+<Route path="/articles/article/10" element={<Article10 />} />
+<Route path="/articles/article/11" element={<Article11 />} />
 
           <Route path="/experts" element={<Speakers />} />
           <Route path="/weekly-digest" element={<WeeklyDigest />} />
@@ -82,6 +87,7 @@ const App = () => {
           <Route path="/enterprise-signals/enterprise/2" element={<Enterprise2 />} />
           <Route path="/enterprise-signals/enterprise/3" element={<Enterprise3 />} />
           <Route path="/enterprise-signals/enterprise/4" element={<Enterprise4 />} />
+          <Route path="/enterprise-signals/enterprise/5" element={<Enterprise5 />} />
         </Routes>
       </main>
 

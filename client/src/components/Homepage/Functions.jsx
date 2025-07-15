@@ -107,7 +107,7 @@ const Functions = () => {
   {
     category: "BFSI",
     title: "Finfluencers in India: The Do's and Don’ts under SEBI’s Regulatory Framework",
-    image: "Tanvi Muraleedharan.jpeg",
+    image: "Tanvi.jpg",
     path: "/articles/article/6",
   },
   {

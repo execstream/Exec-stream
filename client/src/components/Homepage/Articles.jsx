@@ -72,7 +72,7 @@ const articles = [
     category: ['Legal', 'Consumer Protection'],
     image: '/Utkarsha Sharma .jpg',
     authors: [
-      { name: 'Tanvi Muraleedharan', image: '/Tanvi Muraleedharan.jpeg', designation: 'Partner', company: 'LawKNIT Partners' },
+      { name: 'Tanvi Muraleedharan', image: '/Tanvi.jpg', designation: 'Partner', company: 'LawKNIT Partners' },
       { name: 'Utkarsha Sharma', image: '/Utkarsha Sharma .jpg', designation: 'Senior Associate', company: 'LawKNIT Partners' }
     ],
     path: '/articles/article/6',
@@ -90,7 +90,7 @@ const articles = [
     title: "From Shelf to Scooter: The Legal Mess Behind India's 10-Minute Commerce Boom",
     category: ['Legal', 'E Commerce'],
     image: '/Rahul Sundaram.webp',
-    authors: [{ name: 'Rahul Sundaram', image: '/Rahul Sundaram.webp', designation: 'Partner', company: 'Indialaw LLP' }],
+    authors: [{ name: 'Rahul Sundaram', image: '/Rahul Sundaram.webp', designation: 'Partner', company: 'INDIALAW LLP' }],
     path: '/articles/article/8',
   }
 ];

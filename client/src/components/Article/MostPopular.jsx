@@ -35,7 +35,7 @@ const MostPopular = () => {
       category: ['Legal', 'Consumer Protection'],
       image: '/Utkarsha Sharma .jpg',
       authors: [
-        { name: 'Tanvi Muraleedharan', image: '/Tanvi Muraleedharan.jpeg' },
+        { name: 'Tanvi Muraleedharan', image: '/Tanvi.jpg' },
         { name: 'Utkarsha Sharma', image: '/Utkarsha Sharma .jpg' }
       ],
       path: '/articles/article/6',

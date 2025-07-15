@@ -37,7 +37,7 @@ const Article = () => {
           <h2 className="text-xl font-bold mb-2">Rahul Sundaram </h2>
           <p className="text-sm font-medium text-gray-500 mb-6">
             {" "}
-            Partner <br/> Indialaw LLP
+            Partner <br/> INDIALAW LLP
           </p>
 
           <div className="flex gap-2 mb-8">

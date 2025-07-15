@@ -65,7 +65,7 @@ const articles = [
     category: ['Legal', 'Consumer Protection'],
     image: '/Utkarsha Sharma .jpg',
     authors: [
-      { name: 'Tanvi Muraleedharan ', image: '/Tanvi Muraleedharan.jpeg' },
+      { name: 'Tanvi Muraleedharan ', image: '/Tanvi.jpg' },
       { name: 'Utkarsha Sharma ', image: '/Utkarsha Sharma .jpg' },
     ],
   },
@@ -91,6 +91,27 @@ const articles = [
     category: ['Legal', 'Medical Devices'],
     image: '/medical.jpg',
     authors: [{ name: 'Biplab Lenin', image: '/Biplab Lenin.jpeg' }],
+  },
+   {
+    id: 10,
+    title: 'Founders, freelancers, and fractional roles: Who is actually an employee?',
+    category: ['Legal', 'HR', 'Employment','CHRO','GC'],
+    image: '/medical.jpg',
+    authors: [
+      { name: 'Veena Gopalakrishnan', image: '/Veena.jpg' },
+      { name: 'Vinduja Menon', image: '/Vinduja.jpeg' },
+       { name: 'Atishay Kumar', image: '/Atishay.jpg' },
+    ],
+  },
+   {
+    id: 11,
+    title: 'The Silent Risk in Sale Deed Structuring: Stamp Duty, Under-Valuation Allegations and the ...',
+    category: [ 'Legal', 'Finance','Real Estate',' CFO', ],
+    image: '/medical.jpg',
+   authors: [
+      { name: 'Avikshit Moral ', image: '/Avikshit-Moral.jpg' },
+      { name: 'Preeti Dhar', image: '/Preeti Dhar.jpg' },
+    ],
   },
 
 ];

@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 
 const playlists = [
@@ -32,7 +31,6 @@ const playlists = [
 ];
 
 const WeeklyDigest = () => {
- 
   const navigate = useNavigate();
 
   return (
@@ -43,7 +41,7 @@ const WeeklyDigest = () => {
         {playlists.map((item) => (
           <div
             key={item.id}
-          
+            onClick={() => navigate(item.path)}
             className="cursor-pointer bg-white shadow-md rounded-lg overflow-hidden transition-transform hover:scale-105"
           >
             <img
@@ -56,7 +54,7 @@ const WeeklyDigest = () => {
               <p className="text-sm text-gray-600 mb-4">{item.description}</p>
               <button
                 onClick={(e) => {
-                  e.stopPropagation(); 
+                  e.stopPropagation(); // Prevents triggering card onClick
                   navigate(item.path);
                 }}
                 className="mt-2 text-sm text-blue-600 hover:underline"
@@ -67,8 +65,6 @@ const WeeklyDigest = () => {
           </div>
         ))}
       </div>
-
-   
     </div>
   );
 };

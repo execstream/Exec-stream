@@ -6,6 +6,13 @@ const Banner = () => {
   
   const bannerContents = [
     {
+      id: 4,
+      image: "ES-5.png",
+      title: "The Last-Mile Failure of Finance Transformation. And How CFOs Can Fix It.",
+      tags: ['Finance', 'Digital Transformation', 'CFO','Finance Transformation'],
+      path: "/enterprise-signals/enterprise/5",
+    },
+    {
       id: 1,
       image: "ES-1.jpg",
       title:
@@ -28,13 +35,7 @@ const Banner = () => {
       tags: ["Finance", "Sustainability", "CFO", "CSO", "Green Financing"],
       path: "/enterprise-signals/enterprise/3",
     },
-    {
-      id: 4,
-      image: "ES-4 .jpg",
-      title: "HR & ESG: From Back Office to Boardroom",
-      tags: ["HR", "WorkForce Governance", "CHRO"],
-      path: "/enterprise-signals/enterprise/4",
-    },
+    
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);

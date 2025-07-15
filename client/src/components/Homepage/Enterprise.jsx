@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 const LatestNews = () => {
   const editorsPick = {
     id: 1,
-    category: 'Information Security',
-    title: 'TRAI-RBI Spam Call Control Signal: When Consent Becomes Code, and Marketing Becomes Liability',
+    category: 'Finance',
+    title: 'The Last-Mile Failure of Finance Transformation. And How CFOs Can Fix It.',
     author: 'Biplab Sengupta',
     date: 'July 14, 2025',
-    image: '/ES-1.jpg',
-    path: '/enterprise-signals/enterprise/1',
+    image: '/ES-5.png',
+    path: '/enterprise-signals/enterprise/5',
   };
 
   const newsItems = [

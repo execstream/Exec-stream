@@ -14,6 +14,13 @@ const categories = [
 
 const articles = [
   {
+    id: 5,
+    title: ' The Last-Mile Failure of Finance Transformation. And How CFOs Can Fix It.',
+    category: ['Finance', 'Digital Transformation', 'CFO','Finance Transformation'],
+    image: '/ES-5.png',
+     authors: [{ name: 'Biplab Sengupta', image: '/Biplab.jpeg' }],
+  },
+  {
     id: 1,
     title: 'TRAI-RBI Spam Call Control Signal: When Consent Becomes Code, and Marketing Becomes Liability',
     category: ['Information Security', 'Privacy','BFSI'],
@@ -42,13 +49,7 @@ const articles = [
     image: '/ES-4 .jpg',
      authors: [{ name: 'Biplab Sengupta', image: '/Biplab.jpeg' }],
   },
-  {
-    id: 5,
-    title: ' The Last-Mile Failure of Finance Transformation. And How CFOs Can Fix It.',
-    category: ['Finance', 'Digital Transformation', 'CFO','Finance Transformation'],
-    image: '/ES-5.png',
-     authors: [{ name: 'Biplab Sengupta', image: '/Biplab.jpeg' }],
-  },
+  
  
 ];
 

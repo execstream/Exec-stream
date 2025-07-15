@@ -29,7 +29,16 @@ const CXO = () => {
       title:
         "HR is Not a Support Function - It’s a Business Lens: A Deep-Dive Interview with Om Narayan Rai, Head of HR, Infinity Learn",
       description:
-        "From leading M&A integrations across continents to cutting early attrition by 30% in a hyper-competitive sector, Om Narayan Rai’s HR playbook blends operational grit with cultural foresight.",
+        "From leading M&A integrations across continents to cutting early attrition by 30% in a hyper-competitive sector, Om Narayan Rai’s HR playbook blends operational grit with cultural foresight...",
+    },
+    {
+      id: 4,
+      image: "/Monal Puj.png",
+      category: "LEGAL & GC",
+      title:
+        "Interview with Monal Puj, Head of Legal at Cliantha Research on Leading Legal in a Global CRO",
+      description:
+        "A deep dive into the unseen legal machinery behind clinical research. In this upcoming CXO conversation, Monal Puj, Head of Legal at Cliantha Research, opens up about navigating multinational trial contracts, patient data risks, AI compliance, regulatory shifts...",
     },
   ];
 

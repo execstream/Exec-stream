@@ -12,6 +12,21 @@ const truncateWords = (text, wordLimit) => {
 const articles = [
   {
     id: 1,
+    title: 'The First 100 Days on a Board: What Every General Counsel(GC)-turned-...',
+    category: ['Legal', 'Board Governance'],
+    image: '/medical.jpg',
+    authors: [
+      {
+        name: 'Atul Juvle ',
+        image: '/Atul Juvle.jpg',
+        designation: 'Independent Director \n AMNS Ports India Ltd. ',
+        company: '\n Consulting General Counsel \n AP2 Legal Consulting LLP',
+      }
+    ],
+    path: '/articles/article/9',
+  },
+  {
+    id: 2,
     title: 'Risk Management Playbook for Alternative Investment Funds',
     category: ['Legal', 'Fund Governance'],
     image: '/medical.jpg',
@@ -26,7 +41,7 @@ const articles = [
     path: '/articles/article/9',
   },
   {
-    id: 2,
+    id: 3,
     title: 'India-UK FTA: A blueprint trade agreement for the future',
     category: ['Finance', 'Foreign Trade'],
     image: '/Parth.jpg',
@@ -37,7 +52,7 @@ const articles = [
     path: '/articles/article/2',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Cloud Misconfiguration is the New Malware',
     category: ['Info Sec', 'Cloud Configurations'],
     image: '/cloud.jpg',
@@ -48,7 +63,7 @@ const articles = [
     path: '/articles/article/3',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Labour, Employment, and HR Issues in M&A Transactions: Navigating People Risks in Deal-Making',
     category: ['Legal', 'Employment'],
     image: '/legal.jpg',
@@ -56,7 +71,7 @@ const articles = [
     path: '/articles/article/4',
   },
   {
-    id: 5,
+    id: 6,
     title: "Looks Like Content, Acts Like Ads: The Legal Risk in E-Commerce's Influencer",
     category: ['Legal', 'E Commerce'],
     image: '/Karishma.jpeg',
@@ -67,7 +82,7 @@ const articles = [
     path: '/articles/article/5',
   },
   {
-    id: 6,
+    id: 7,
     title: "Finfluencers in India: The Do's and Don’ts under SEBI’s Regulatory Framework",
     category: ['Legal', 'Consumer Protection'],
     image: '/Utkarsha Sharma .jpg',
@@ -78,21 +93,14 @@ const articles = [
     path: '/articles/article/6',
   },
   {
-    id: 7,
+    id: 8,
     title: 'How to Effectively Negotiate with Trade Unions in India',
     category: ['Legal', 'Employment', 'GC', 'CHRO'],
     image: '/Rohitaashv Sinha.svg',
     authors: [{ name: 'Rohitaashv Sinha', image: '/Rohitaashv Sinha.jpeg', designation: 'Partner(Labour & Employment)', company: 'King Stubb & Kasiva' }],
     path: '/articles/article/7',
   },
-  {
-    id: 8,
-    title: "From Shelf to Scooter: The Legal Mess Behind India's 10-Minute Commerce Boom",
-    category: ['Legal', 'E Commerce'],
-    image: '/Rahul Sundaram.webp',
-    authors: [{ name: 'Rahul Sundaram', image: '/Rahul Sundaram.webp', designation: 'Partner', company: 'INDIALAW LLP' }],
-    path: '/articles/article/8',
-  }
+  
 ];
 
 const getRows = (articles) => {
@@ -141,12 +149,12 @@ const Articles = () => {
                       {article.authors?.[0]?.name}
                     </p>
                     {article.authors?.[0]?.designation && (
-                      <p className="text-xs text-gray-600 font-inter">
+                      <p className="text-xs text-gray-600 font-inter whitespace-pre-line">
                         {article.authors[0].designation}
                       </p>
                     )}
                     {article.authors?.[0]?.company && (
-                      <p className="text-xs text-gray-600 font-inter mb-3">
+                      <p className="text-xs text-gray-600 font-inter mb-3 whitespace-pre-line">
                         {article.authors[0].company}
                       </p>
                     )}

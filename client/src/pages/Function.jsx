@@ -54,7 +54,9 @@ const articles = [
     title: "The Invisible Risk in Digital Diagnostics",
     category: ["Legal", "Medical Devices"],
     image: "/Biplab Lenin.jpeg",
-    authors: [{ name: "Biplab Lenin", image: "/Biplab Lenin.jpeg" }],
+    authors: [{ name: "Biplab Lenin", image: "/Biplab Lenin.jpeg" },
+      { name: "Anam Chowdhary", image: "/Anam Chowdhary.png" }
+    ],
     path: "/articles/article/1",
   },
   {

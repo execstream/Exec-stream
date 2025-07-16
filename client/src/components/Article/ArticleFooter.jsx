@@ -13,8 +13,12 @@ const featuredArticles = [
       {
         name: "Biplab Lenin",
         image: "/Biplab Lenin.jpeg",
-        designation: "Legal Expert",
-        company: "LegalTech Solutions",
+        
+      },
+      {
+        name: "Anam Chowdhary",
+        image: "/Anam Chowdhary.png",
+        
       },
     ],
     path: "/articles/article/1",

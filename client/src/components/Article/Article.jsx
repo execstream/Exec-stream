@@ -41,13 +41,40 @@ const Article = () => {
            <div className="text-sm text-gray-500 flex items-center space-x-4 mb-6">
         <span>July 9, 2025</span>
       </div>
-          <div className="w-full flex justify-center mb-6">
-            <img
-              src="/Biplab Lenin.jpeg"
-              alt="Biplab Lenin"
-              className="h-[400px] w-auto object-cover rounded-xl shadow-md"
-            />
-          </div>
+          <div className="flex flex-wrap justify-center gap-10 mb-10">
+  {[
+    {
+      name: "Biplab Lenin",
+      designation:
+        "Partner (Pharma, Healthcare, Lifesciences) \n Cyril Amarchand Mangaldas",
+      image: "/Biplab Lenin.jpeg",
+    },
+    {
+      name: "Anam Chowdhary",
+      designation:
+        "Associate \n Cyril Amarchand Mangaldas",
+      image: "/Anam Chowdhary.png",
+    },
+  ].map((author, index) => (
+    <div
+      key={index}
+      className="flex flex-col items-center text-center max-w-xs"
+    >
+      <img
+        src={author.image}
+        alt={author.name}
+        className="w-[200px] h-[200px] object-cover rounded-xl shadow-lg border border-gray-300"
+        onError={(e) =>
+          (e.currentTarget.src = "https://via.placeholder.com/200?text=A")
+        }
+      />
+      <span className="text-xl font-bold mb-2">{author.name}</span>
+      <span className="text-sm font-medium text-gray-500 mb-6 whitespace-pre-line">
+        {author.designation}
+      </span>
+    </div>
+  ))}
+</div>
 
           <h2 className="text-xl font-bold mb-2">Biplab Lenin </h2>
           <p className="text-sm font-medium text-gray-500 mb-6">

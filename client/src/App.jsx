@@ -36,6 +36,7 @@ import Customs from "./pages/Customs";
 import Fintech from "./pages/Fintech";
 import Article10 from "./components/Article/Article10";
 import Article11 from "./components/Article/Article11";
+import Article12 from "./components/Article/Article12";
 const App = () => {
    useEffect(() => {
     const handleRightClick = (e) => e.preventDefault();
@@ -73,7 +74,7 @@ const App = () => {
           <Route path="/articles/article/9" element={<Article9 />} />
 <Route path="/articles/article/10" element={<Article10 />} />
 <Route path="/articles/article/11" element={<Article11 />} />
-
+<Route path="/articles/article/12" element={<Article12 />} />
           <Route path="/experts" element={<Speakers />} />
           <Route path="/weekly-digest" element={<WeeklyDigest />} />
           <Route path="/weekly/bis" element={<BIS />} />

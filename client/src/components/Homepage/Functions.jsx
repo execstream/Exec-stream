@@ -113,7 +113,7 @@ const Functions = () => {
   {
     category: "Healthcare",
     title: "The Invisible Risk in Digital Diagnostics: Who Regulates AI-Powered Medical Devices in India?",
-    image: "/Biplab Lenin.jpeg",
+    image: "/Biplab Lenin.png",
     path: "/articles/article/1",
   },
   {

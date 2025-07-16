@@ -12,7 +12,7 @@ const Themes = () => {
   const articles = [
     {
       id: 1,
-      image: '/Shagoofa Rashid Khan.jpeg', 
+      image: '/Shagoofa.jpg', 
       category: 'Legal',
       title: 'Risk Management Playbook for Alternative Investment Funds',
       author: 'Shagoofa Rashid Khan',

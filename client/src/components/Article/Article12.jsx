@@ -57,6 +57,16 @@ Consulting General Counsel <br /> AP2 Legal Consulting LLP
 
           {/* Article Content */}
           <article className="prose max-w-none text-gray-700 [&>p]:text-sm [&>ul]:text-sm [&>li]:mb-2 [&>li]:text-sm [&>em]:text-sm [&>span]:text-sm">
+           <p className="mb-4 text-sm">In a world where everything is shifting—whether it’s the environment or geopolitical
+tensions—the role of the General Counsel on the board has become a necessity, not
+just a nice-to-have. With the constant changes in regulations and the unpredictability
+of the BANI world, it’s not just about having someone with a legal background for the
+sake of compliance. The General Counsel is there to help the board navigate these
+complexities, ensuring the company stays on top of what’s happening and is ready to
+respond when things change. It’s about more than just checking legal boxes; it’s
+about having someone who can bring clarity and strategy to decisions, even when
+the path forward isn’t always clear. It’s no longer an accessory to the team, but a
+critical part of its success and resilience.</p>
             <p className="mb-8 text-sm">
              In the book ‘The First 90 Days, Harvard Business School professor Michael Watkins
 presented a road map for taking charge in your first 90 days in a management job.
@@ -194,6 +204,8 @@ as fiduciary duties).
     </tbody>
   </table>
 </div>
+<p><b>*The views expressed in this article are personal to the author and not of the organisation.</b>
+</p>
      
                      </article>
         </div>

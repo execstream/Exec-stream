@@ -53,8 +53,8 @@ const articles = [
     id: 1,
     title: "The Invisible Risk in Digital Diagnostics",
     category: ["Legal", "Medical Devices"],
-    image: "/Biplab Lenin.jpeg",
-    authors: [{ name: "Biplab Lenin", image: "/Biplab Lenin.jpeg" },
+    image: "/Biplab Lenin.png",
+    authors: [{ name: "Biplab Lenin", image: "/Biplab Lenin.png" },
       { name: "Anam Chowdhary", image: "/Anam Chowdhary.png" }
     ],
     path: "/articles/article/1",
@@ -131,8 +131,8 @@ const articles = [
     id: 9,
     title: "Risk Management Playbook",
     category: ["Legal", "Fund Governance"],
-    image: "/Shagoofa Rashid Khan.jpeg",
-    authors: [{ name: "Shagoofa Rashid Khan", image: "/Shagoofa Rashid Khan.jpeg" }],
+    image: "/Shagoofa.jpg",
+    authors: [{ name: "Shagoofa Rashid Khan", image: "/Shagoofa.jpg" }],
     path: "/articles/article/9",
   },
 ];

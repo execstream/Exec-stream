@@ -27,7 +27,7 @@ const Article = () => {
       </div>
           <div className="w-full flex justify-center mb-6">
             <img
-              src="/Shagoofa Rashid Khan.jpeg"
+              src="/Shagoofa.jpg"
               alt="Shagoofa Rashid Khan"
               className="h-[400px] w-auto object-cover rounded-xl shadow-md"
             />

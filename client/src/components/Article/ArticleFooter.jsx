@@ -12,7 +12,7 @@ const featuredArticles = [
     authors: [
       {
         name: "Biplab Lenin",
-        image: "/Biplab Lenin.jpeg",
+        image: "/Biplab Lenin.png",
         
       },
       {

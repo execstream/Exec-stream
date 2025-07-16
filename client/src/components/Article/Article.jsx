@@ -47,7 +47,7 @@ const Article = () => {
       name: "Biplab Lenin",
       designation:
         "Partner (Pharma, Healthcare, Lifesciences) \n Cyril Amarchand Mangaldas",
-      image: "/Biplab Lenin.jpeg",
+      image: "/Biplab Lenin.png",
     },
     {
       name: "Anam Chowdhary",

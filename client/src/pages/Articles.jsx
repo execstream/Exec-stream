@@ -17,15 +17,15 @@ const articles = [
     id: 12,
     title: 'The First 100 Days on a Board: What Every General Counsel(GC)-turned-...',
     category: ['Legal', 'Board Governance'],
-    image: '/Shagoofa Rashid Khan.svg',
+    image: '/Atul Juvle.jpg',
     authors: [{ name: 'Atul Juvle', image: '/Atul Juvle.jpg' }],
   },
   {
     id: 9,
     title: 'Risk Management Playbook for Alternative Investment Funds',
     category: ['Legal', 'Fund Governance'],
-    image: '/Shagoofa Rashid Khan.svg',
-    authors: [{ name: 'Shagoofa Rashid Khan', image: '/Shagoofa Rashid Khan.jpeg' }],
+    image: '/Shagoofa.jpg',
+    authors: [{ name: 'Shagoofa Rashid Khan', image: '/Shagoofa.jpg' }],
   },
 
   
@@ -97,7 +97,7 @@ const articles = [
     title: 'The Invisible Risk in Digital Diagnostics: Who Regulates AI-Powered Medical Devices in India?',
     category: ['Legal', 'Medical Devices'],
     image: '/medical.jpg',
-    authors: [{ name: 'Biplab Lenin', image: '/Biplab Lenin.jpeg' },
+    authors: [{ name: 'Biplab Lenin', image: '/Biplab Lenin.png' },
       { name: 'Anam Chowdhary', image: '/Anam Chowdhary.png' }
     ],
   },

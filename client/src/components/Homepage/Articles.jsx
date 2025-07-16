@@ -33,7 +33,7 @@ const articles = [
     authors: [
       {
         name: 'Shagoofa Rashid Khan',
-        image: '/Shagoofa Rashid Khan.jpeg',
+        image: '/Shagoofa.jpg',
         designation: 'Senior Partner ',
         company: 'AZB & Partners',
       }

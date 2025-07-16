@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 import MostPopular from "./Article/MostPopular";
+import { FaLinkedinIn } from "react-icons/fa";
 
 const Article = () => {
   useEffect(() => {
@@ -228,20 +229,45 @@ industry, as well as developing expertise in areas like medical malpractice, p
 laws (HIPAA, GDPR) and compliance. Healthcare law is associated with ethical
 considerations. Understanding concepts like informed consent and patient rights  is crucial.</p>
            
-       <div className="mt-10 bg-blue-50 p-4 rounded-lg shadow flex items-start space-x-4">
-  <img
-    src="/Monal Puj.png"
-    alt="Monal Puj"
-    className="w-16 h-16 rounded-full object-cover border-2 border-[#789BFF] mt-1"
-  />
+   
+
+
+
+<div className="mt-10 bg-blue-50 p-4 rounded-lg shadow flex items-start space-x-4">
+  {/* Image and LinkedIn */}
+  <div className="flex flex-col items-center space-y-2">
+    <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[#789BFF]">
+      <img
+        src="/Monal Puj.png"
+        alt="Monal Puj"
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <a
+      href="https://www.linkedin.com/in/monal-puj-5053749/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-[#0A66C2] text-white p-2 rounded-full hover:bg-[#004182] transition"
+    >
+      <FaLinkedinIn size={16} />
+    </a>
+  </div>
+
+  {/* Text */}
   <div>
     <p className="text-sm font-semibold text-gray-800 mb-1">Guest Profile</p>
     <p className="text-xs text-gray-700 leading-relaxed">
-      <strong>Monal Puj</strong> is a corporate legal leader with 19+ years of experience in the pharmaceutical and clinical research sectors and has deep expertise in contract negotiation, regulatory compliance, intellectual property, and cross-border legal operations.
+      <strong>Monal Puj</strong> is a corporate legal leader with 19+ years of experience in the pharmaceutical
+      and clinical research sectors and has deep expertise in contract negotiation, regulatory compliance,
+      intellectual property, and cross-border legal operations.
       <br /><br />
-      As the architect of centralized legal functions across India, USA, and Canada, she has led complex commercial, licensing, clinical trial, and IP agreements, while navigating global compliance frameworks including GDPR, FCPA, and data privacy regulations.
+      As the architect of centralized legal functions across India, USA, and Canada, she has led complex
+      commercial, licensing, clinical trial, and IP agreements, while navigating global compliance frameworks
+      including GDPR, FCPA, and data privacy regulations.
       <br /><br />
-      Known for her strategic facilitation of high-value deals, M&A due diligence, and stakeholder negotiations, and played a pivotal role in employment law matters and litigation oversight. Her career reflects a strong commitment to legal excellence, enterprise risk mitigation, and aligning legal strategy with business growth.
+      Known for her strategic facilitation of high-value deals, M&A due diligence, and stakeholder negotiations,
+      and played a pivotal role in employment law matters and litigation oversight. Her career reflects a strong
+      commitment to legal excellence, enterprise risk mitigation, and aligning legal strategy with business growth.
     </p>
   </div>
 </div>

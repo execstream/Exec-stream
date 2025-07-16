@@ -37,6 +37,7 @@ import Fintech from "./pages/Fintech";
 import Article10 from "./components/Article/Article10";
 import Article11 from "./components/Article/Article11";
 import Article12 from "./components/Article/Article12";
+import CXO4 from "./components/CXO4";
 const App = () => {
    useEffect(() => {
     const handleRightClick = (e) => e.preventDefault();
@@ -72,6 +73,7 @@ const App = () => {
           <Route path="/articles/article/7" element={<Article7 />} />
           <Route path="/articles/article/8" element={<Article8 />} />
           <Route path="/articles/article/9" element={<Article9 />} />
+            <Route path="/cxo/4" element={<CXO4 />} />
 <Route path="/articles/article/10" element={<Article10 />} />
 <Route path="/articles/article/11" element={<Article11 />} />
 <Route path="/articles/article/12" element={<Article12 />} />

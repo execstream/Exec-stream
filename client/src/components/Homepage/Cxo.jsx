@@ -5,40 +5,48 @@ import SlidingBanner from "./SlidingBanner";
 const CXO = () => {
   const interviewArticles = [
     {
-      id: 1,
-      image: "/M Vasuedev Rao.png",
-      category: "LEGAL",
-      title:
-        "The GC as Enterprise Conscience: A Legal Odyssey Across Sectors with M. Vasudev Rao , Group General Counsel, Hinduja Group",
-      description:
-        "An in-depth conversation unpacking how GCs shape institutional memory, manage legal across sprawling conglomerates, and build future-ready legal teams. A rare look into the invisible levers of corporate legal strategy, from capital markets to legacy-driven multinationals.",
-    },
-    {
-      id: 2,
-      image: "/479267754.avif",
-      category: "INFOSEC & DATA PRIVACY",
-      title:
-        "Inside the Mind of a Modern DPO - A Conversation with Krishnanand Bhatt, DPO at IDBI Bank",
-      description:
-        "In this interview, he shares hard-earned lessons on building trust in times of crisis, balancing legacy banking architecture with emerging threats, and why AI, cross-border risk, and governance demand a new kind of leadership mindset.",
-    },
-    {
-      id: 3,
-      image: "/Om.png",
-      category: "HR",
-      title:
-        "HR is Not a Support Function - It’s a Business Lens: A Deep-Dive Interview with Om Narayan Rai, Head of HR, Infinity Learn",
-      description:
-        "From leading M&A integrations across continents to cutting early attrition by 30% in a hyper-competitive sector, Om Narayan Rai’s HR playbook blends operational grit with cultural foresight...",
-    },
-    {
       id: 4,
+      slug: "monal-puj",
       image: "/Monal Puj.png",
       category: "LEGAL & GC",
       title:
         "Interview with Monal Puj, Head of Legal at Cliantha Research on Leading Legal in a Global CRO",
       description:
         "A deep dive into the unseen legal machinery behind clinical research. In this upcoming CXO conversation, Monal Puj, Head of Legal at Cliantha Research, opens up about navigating multinational trial contracts, patient data risks, AI compliance, regulatory shifts...",
+      published: true,
+    },
+    {
+      id: 1,
+      slug: "vasudev-rao",
+      image: "/M Vasuedev Rao.png",
+      category: "LEGAL",
+      title:
+        "The GC as Enterprise Conscience: A Legal Odyssey Across Sectors with M. Vasudev Rao , Group General Counsel, Hinduja Group",
+      description:
+        "An in-depth conversation unpacking how GCs shape institutional memory, manage legal across sprawling conglomerates, and build future-ready legal teams. A rare look into the invisible levers of corporate legal strategy, from capital markets to legacy-driven multinationals.",
+      published: false,
+    },
+    {
+      id: 2,
+      slug: "krishnanand-bhatt",
+      image: "/479267754.avif",
+      category: "INFOSEC & DATA PRIVACY",
+      title:
+        "Inside the Mind of a Modern DPO - A Conversation with Krishnanand Bhatt, DPO at IDBI Bank",
+      description:
+        "In this interview, he shares hard-earned lessons on building trust in times of crisis, balancing legacy banking architecture with emerging threats, and why AI, cross-border risk, and governance demand a new kind of leadership mindset.",
+      published: false,
+    },
+    {
+      id: 3,
+      slug: "om-narayan-rai",
+      image: "/Om.png",
+      category: "HR",
+      title:
+        "HR is Not a Support Function - It’s a Business Lens: A Deep-Dive Interview with Om Narayan Rai, Head of HR, Infinity Learn",
+      description:
+        "From leading M&A integrations across continents to cutting early attrition by 30% in a hyper-competitive sector, Om Narayan Rai’s HR playbook blends operational grit with cultural foresight...",
+      published: false,
     },
   ];
 
@@ -85,7 +93,6 @@ const CXO = () => {
         <div className="lg:col-span-2">
           <div className="bg-[#789BFF26] px-4 sm:px-6 py-6 rounded-md">
             <div className="h-[1px] w-full bg-black mb-4" />
-
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
               <h2 className="text-2xl font-bold text-black">CXO</h2>
               <Link
@@ -99,9 +106,10 @@ const CXO = () => {
             {/* Interview Cards */}
             <div className="space-y-8">
               {interviewArticles.map((article) => (
-                <div
+                <Link
                   key={article.id}
-                  className="bg-[#E6EDFF] hover:bg-[#d0dbff] transition-colors duration-300 rounded-md overflow-hidden flex flex-col sm:flex-row"
+                  to={`/cxo/${article.id}`}
+                  className="block bg-[#E6EDFF] hover:bg-[#d0dbff] transition-colors duration-300 rounded-md overflow-hidden flex flex-col sm:flex-row"
                 >
                   <div className="w-full sm:w-1/3 md:max-h-52 sm:h-auto bg-gray-200 flex-shrink-0">
                     <img
@@ -118,15 +126,17 @@ const CXO = () => {
                       <h3 className="text-base font-bold text-black mt-1 mb-2 leading-snug">
                         {article.title}
                       </h3>
-                      <p className="text-sm mb-2 font-medium text-gray-700">
-                        <em>(Coming soon...)</em>
-                      </p>
+                      {!article.published && (
+                        <p className="text-sm mb-2 font-medium text-gray-700">
+                          <em>(Coming soon...)</em>
+                        </p>
+                      )}
                       <p className="text-black text-sm mb-2">
                         {article.description}
                       </p>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

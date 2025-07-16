@@ -10,7 +10,7 @@ const CXO = () => {
       image: "/Monal Puj.png",
       category: "LEGAL & GC",
       title:
-        "Interview with Monal Puj, Head of Legal at Cliantha Research on Leading Legal in a Global CRO",
+        "In conversation with Monal Puj, Head of Legal at Cliantha Research , on Leading Legal in a Global CRO",
       description:
         "A deep dive into the unseen legal machinery behind clinical research. In this upcoming CXO conversation, Monal Puj, Head of Legal at Cliantha Research, opens up about navigating multinational trial contracts, patient data risks, AI compliance, regulatory shifts...",
       published: true,

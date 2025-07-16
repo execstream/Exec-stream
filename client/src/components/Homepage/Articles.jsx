@@ -23,7 +23,7 @@ const articles = [
         company: '\n Consulting General Counsel \n AP2 Legal Consulting LLP',
       }
     ],
-    path: '/articles/article/9',
+    path: '/articles/article/12',
   },
   {
     id: 2,

@@ -13,7 +13,7 @@ const Article = () => {
       <div className="flex flex-col md:flex-row gap-10">
         <div className="md:col-span-2">
           <h1 className="text-2xl md:text-5xl font-bold text-[#789BFF] mb-4">
-          In conversation with Monal Puj, Head of Legal at Cliantha Research , on Leading Legal in a Global CRO
+          In conversation with Monal Puj, Head of Legal at Cliantha Research, on Leading Legal in a Global CRO
           </h1>
           <div className="text-sm text-gray-500 flex items-center space-x-4 mb-6">
             <span>July 16, 2025</span>

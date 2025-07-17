@@ -6,6 +6,13 @@ const Banner = () => {
   
   const bannerContents = [
     {
+      id: 3,
+      image: "ES-6.webp",
+      title: "AI Leadership Is Surging - But So Are the Risks: Why CXOs Must Balance Acceleration with Accountability",
+      tags: ['AI Skills', 'Leadership', 'HR', 'CHRO'],
+      path: "/enterprise-signals/enterprise/6",
+    },
+    {
       id: 4,
       image: "ES-5.png",
       title: "The Last-Mile Failure of Finance Transformation. And How CFOs Can Fix It.",
@@ -27,15 +34,7 @@ const Banner = () => {
       tags: ["Legal", "Contracts", "GC"],
       path: "/enterprise-signals/enterprise/2",
     },
-    {
-      id: 3,
-      image: "ES-3.jpg",
-      title:
-        "India's ESG Bonds: Debt, Disclosures, and the Double Game of Promises",
-      tags: ["Finance", "Sustainability", "CFO", "CSO", "Green Financing"],
-      path: "/enterprise-signals/enterprise/3",
-    },
-    
+   
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);

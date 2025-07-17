@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 const LatestNews = () => {
   const editorsPick = {
     id: 1,
-    category: 'Finance',
-    title: 'The Last-Mile Failure of Finance Transformation. And How CFOs Can Fix It.',
+    category: 'HR',
+    title: 'AI Leadership Is Surging - But So Are the Risks: Why CXOs Must Balance Acceleration with Accountability',
     author: 'Biplab Sengupta',
-    date: 'July 14, 2025',
-    image: '/ES-5.png',
-    path: '/enterprise-signals/enterprise/5',
+    date: 'July 17, 2025',
+    image: '/ES-6.webp',
+    path: '/enterprise-signals/enterprise/6',
   };
 
   const newsItems = [

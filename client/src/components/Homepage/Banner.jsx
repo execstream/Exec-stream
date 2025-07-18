@@ -5,22 +5,29 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 const Banner = () => {
   
   const bannerContents = [
-    {
+     {
       id: 1,
-      image: "ES-8.jpg",
+      image: "/ES-9.jpg",
+      title: "The Exit That Didn’t End: What the Wipro Defamation Ruling Means for CHROs and GCs",
+      tags: ['HR', 'Legal', 'HR Risk','Employment'],
+      path: "/enterprise-signals/enterprise/9",
+    },
+    {
+      id: 2,
+      image: "/ES-8.jpg",
       title: "The New Control Room: Why HR Is Now a Risk Nerve Center and What Leaders Must Do About It",
       tags: ['HR', 'Risk Management', 'HR Risk','TPRM'],
       path: "/enterprise-signals/enterprise/8",
     },
     {
-      id: 2,
-      image: "ES-7.jpg",
+      id: 3,
+      image: "/ES-7.jpg",
       title: "After 285 Edits, India’s New Tax Code Inches Closer to Reality. CFOs Stay on the Watchtower",
       tags: ['Finance',  'Tax', 'Direct Tax Code 2025'],
       path: "/enterprise-signals/enterprise/7",
     },
    {
-    id: 3,
+    id: 4,
     title: 'AI Leadership Is Surging - But So Are the Risks: Why CXOs Must Balance Acceleration with Accountability',
     tags: ['AI Skills', 'Leadership', 'HR', 'CHRO'],
     image: '/ES-6.webp',
@@ -28,7 +35,7 @@ const Banner = () => {
     
   },
   {
-    id: 4,
+    id: 5,
     title: ' The Last-Mile Failure of Finance Transformation. And How CFOs Can Fix It.',
     tags: ['Finance', 'Digital Transformation', 'CFO','Finance Transformation'],
     image: '/ES-5.png',

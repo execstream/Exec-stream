@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Routes, Route } from "react-router-dom"; 
+import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -41,8 +41,9 @@ import CXO4 from "./components/CXO4";
 import Enterprise6 from "./components/Enterprise6";
 import Enterprise7 from "./components/Enterprise7";
 import Enterprise8 from "./components/Enterprise8";
+import Enterprise9 from "./components/Enterprise9";
 const App = () => {
-   useEffect(() => {
+  useEffect(() => {
     const handleRightClick = (e) => e.preventDefault();
     document.addEventListener("contextmenu", handleRightClick);
     return () => {
@@ -76,28 +77,54 @@ const App = () => {
           <Route path="/articles/article/7" element={<Article7 />} />
           <Route path="/articles/article/8" element={<Article8 />} />
           <Route path="/articles/article/9" element={<Article9 />} />
-            <Route path="/cxo/4" element={<CXO4 />} />
-<Route path="/articles/article/10" element={<Article10 />} />
-<Route path="/articles/article/11" element={<Article11 />} />
-<Route path="/articles/article/12" element={<Article12 />} />
+          <Route path="/cxo/4" element={<CXO4 />} />
+          <Route path="/articles/article/10" element={<Article10 />} />
+          <Route path="/articles/article/11" element={<Article11 />} />
+          <Route path="/articles/article/12" element={<Article12 />} />
           <Route path="/experts" element={<Speakers />} />
           <Route path="/weekly-digest" element={<WeeklyDigest />} />
           <Route path="/weekly/bis" element={<BIS />} />
           <Route path="/weekly/customs" element={<Customs />} />
-           <Route path="/weekly/fintech" element={<Fintech />} />
-
+          <Route path="/weekly/fintech" element={<Fintech />} />
 
           {/* Enterprise Signals */}
           <Route path="/news-&-analysis" element={<EnterpriseSignals />} />
-          <Route path="/enterprise-signals/enterprise/1" element={<Enterprise1 />} />
-          <Route path="/enterprise-signals/enterprise/2" element={<Enterprise2 />} />
-          <Route path="/enterprise-signals/enterprise/3" element={<Enterprise3 />} />
-          <Route path="/enterprise-signals/enterprise/4" element={<Enterprise4 />} />
-          <Route path="/enterprise-signals/enterprise/5" element={<Enterprise5 />} />
-           <Route path="/enterprise-signals/enterprise/6" element={<Enterprise6 />} />
-           <Route path="/enterprise-signals/enterprise/7" element={<Enterprise7 />} />
-             <Route path="/enterprise-signals/enterprise/8" element={<Enterprise8 />} />
-           
+          <Route
+            path="/enterprise-signals/enterprise/1"
+            element={<Enterprise1 />}
+          />
+          <Route
+            path="/enterprise-signals/enterprise/2"
+            element={<Enterprise2 />}
+          />
+          <Route
+            path="/enterprise-signals/enterprise/3"
+            element={<Enterprise3 />}
+          />
+          <Route
+            path="/enterprise-signals/enterprise/4"
+            element={<Enterprise4 />}
+          />
+          <Route
+            path="/enterprise-signals/enterprise/5"
+            element={<Enterprise5 />}
+          />
+          <Route
+            path="/enterprise-signals/enterprise/6"
+            element={<Enterprise6 />}
+          />
+          <Route
+            path="/enterprise-signals/enterprise/7"
+            element={<Enterprise7 />}
+          />
+          <Route
+            path="/enterprise-signals/enterprise/8"
+            element={<Enterprise8 />}
+          />
+          <Route
+            path="/enterprise-signals/enterprise/9"
+            element={<Enterprise9 />}
+          />
         </Routes>
       </main>
 

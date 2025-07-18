@@ -12,16 +12,23 @@ const categories = [
 ];
 
 const articles = [
+  {
+      id: 9,
+      image: "/ES-9.jpg",
+      title: "The Exit That Didn’t End: What the Wipro Defamation Ruling Means for CHROs and GCs",
+      category: ['HR', 'Legal', 'HR Risk','Employment'],
+    authors: [{ name: 'Biplab Sengupta', image: '/Biplab.jpeg' }],
+    },
    {
       id: 8,
-      image: "ES-8.jpg",
+      image: "/ES-8.jpg",
       title: "The New Control Room: Why HR Is Now a Risk Nerve Center and What Leaders Must Do About It",
       category: ['HR', 'Risk Management', 'HR Risk','TPRM'],
     authors: [{ name: 'Biplab Sengupta', image: '/Biplab.jpeg' }],
     },
     {
       id: 7,
-      image: "ES-7.jpg",
+      image: "/ES-7.jpg",
       title: "After 285 Edits, India’s New Tax Code Inches Closer to Reality. CFOs Stay on the Watchtower",
       category: ['Finance',  'Tax', 'Direct Tax Code 2025'],
      authors: [{ name: 'Biplab Sengupta', image: '/Biplab.jpeg' }],

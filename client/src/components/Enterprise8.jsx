@@ -202,14 +202,14 @@ const Article = () => {
 
 <div className="mt-4">
     <p className="text-sm"><b>What auditors bring:</b></p>
-    <ul className="mt-2 text-sm list-disc ">
+    <ul className="mt-2 text-sm ">
         <li>Frameworks, testing methods, control mapping expertise</li>
     </ul>
 </div>
 
 <div className="mt-4">
     <p className="text-sm"><b>What HR must bring:</b></p>
-    <ul className="mt-2 text-sm list-disc">
+    <ul className="mt-2 text-sm ">
         <li>Process walkthroughs</li>
         <li>Platform access maps</li>
         <li>Vendor integration details</li>
@@ -219,7 +219,7 @@ const Article = () => {
 
 <div className="mt-4">
     <p className="text-sm"><b>Where they must meet:</b></p>
-    <ul className="mt-2 text-sm list-disc">
+    <ul className="mt-2 text-sm ">
         <li>Control design reviews</li>
         <li>AI system assessments</li>
         <li>Privacy audits</li>

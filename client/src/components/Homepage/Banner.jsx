@@ -6,35 +6,34 @@ const Banner = () => {
   
   const bannerContents = [
     {
-      id: 3,
-      image: "ES-6.webp",
-      title: "AI Leadership Is Surging - But So Are the Risks: Why CXOs Must Balance Acceleration with Accountability",
-      tags: ['AI Skills', 'Leadership', 'HR', 'CHRO'],
-      path: "/enterprise-signals/enterprise/6",
-    },
-    {
-      id: 4,
-      image: "ES-5.png",
-      title: "The Last-Mile Failure of Finance Transformation. And How CFOs Can Fix It.",
-      tags: ['Finance', 'Digital Transformation', 'CFO','Finance Transformation'],
-      path: "/enterprise-signals/enterprise/5",
-    },
-    {
       id: 1,
-      image: "ES-1.jpg",
-      title:
-        "TRAI-RBI Spam Call Control Signal: When Consent Becomes Code, and Marketing Becomes Liability",
-      tags: ["Information Security", "Privacy", "BFSI"],
-      path: "/enterprise-signals/enterprise/1",
+      image: "ES-8.jpg",
+      title: "The New Control Room: Why HR Is Now a Risk Nerve Center and What Leaders Must Do About It",
+      tags: ['HR', 'Risk Management', 'HR Risk','TPRM'],
+      path: "/enterprise-signals/enterprise/8",
     },
     {
       id: 2,
-      image: "ES-2.webp",
-      title: "When Contracts Collide With Geopolitics",
-      tags: ["Legal", "Contracts", "GC"],
-      path: "/enterprise-signals/enterprise/2",
+      image: "ES-7.jpg",
+      title: "After 285 Edits, India’s New Tax Code Inches Closer to Reality. CFOs Stay on the Watchtower",
+      tags: ['Finance',  'Tax', 'Direct Tax Code 2025'],
+      path: "/enterprise-signals/enterprise/7",
     },
-   
+   {
+    id: 3,
+    title: 'AI Leadership Is Surging - But So Are the Risks: Why CXOs Must Balance Acceleration with Accountability',
+    tags: ['AI Skills', 'Leadership', 'HR', 'CHRO'],
+    image: '/ES-6.webp',
+   path: '/enterprise-signals/enterprise/6',
+    
+  },
+  {
+    id: 4,
+    title: ' The Last-Mile Failure of Finance Transformation. And How CFOs Can Fix It.',
+    tags: ['Finance', 'Digital Transformation', 'CFO','Finance Transformation'],
+    image: '/ES-5.png',
+  path: '/enterprise-signals/enterprise/5',
+  },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);

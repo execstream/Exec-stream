@@ -7,6 +7,12 @@ const updates = [
     date: "July 12, 2025",
     pdf: "/Fintech.pdf",
   },
+   {
+    id: 2,
+    title: "SEBI proposes a “lite framework” for usage of AI/ML in securities market",
+    date: "July 18, 2025",
+    pdf: "/Fintech2.pdf",
+  },
 ];
 
 

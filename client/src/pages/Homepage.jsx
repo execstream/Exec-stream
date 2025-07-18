@@ -20,12 +20,13 @@ const Homepage = () => {
  <>  <Banner />
     <Enterprise />
     <Articles/>
+     <CXO />
     <FocusAreas /> 
-    <Webcast />
-    <Podcast />
-    <CXO />
-    <Functions/>
+    
    
+    <Functions/>
+   <Webcast />
+    <Podcast />
     <Experts/>
     <Reports/>
     <Brands/>

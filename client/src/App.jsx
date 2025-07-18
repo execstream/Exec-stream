@@ -39,6 +39,8 @@ import Article11 from "./components/Article/Article11";
 import Article12 from "./components/Article/Article12";
 import CXO4 from "./components/CXO4";
 import Enterprise6 from "./components/Enterprise6";
+import Enterprise7 from "./components/Enterprise7";
+import Enterprise8 from "./components/Enterprise8";
 const App = () => {
    useEffect(() => {
     const handleRightClick = (e) => e.preventDefault();
@@ -93,6 +95,9 @@ const App = () => {
           <Route path="/enterprise-signals/enterprise/4" element={<Enterprise4 />} />
           <Route path="/enterprise-signals/enterprise/5" element={<Enterprise5 />} />
            <Route path="/enterprise-signals/enterprise/6" element={<Enterprise6 />} />
+           <Route path="/enterprise-signals/enterprise/7" element={<Enterprise7 />} />
+             <Route path="/enterprise-signals/enterprise/8" element={<Enterprise8 />} />
+           
         </Routes>
       </main>
 

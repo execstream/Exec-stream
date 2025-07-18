@@ -5,11 +5,11 @@ const LatestNews = () => {
   const editorsPick = {
     id: 1,
     category: 'HR',
-    title: 'AI Leadership Is Surging - But So Are the Risks: Why CXOs Must Balance Acceleration with Accountability',
+    title: 'TRAI-RBI Spam Call Control Signal: When Consent Becomes Code, and Marketing Becomes Liability',
     author: 'Biplab Sengupta',
-    date: 'July 17, 2025',
-    image: '/ES-6.webp',
-    path: '/enterprise-signals/enterprise/6',
+    date: 'July 12, 2025',
+    image: '/ES-1.jpg',
+    path: '/enterprise-signals/enterprise/1',
   };
 
   const newsItems = [

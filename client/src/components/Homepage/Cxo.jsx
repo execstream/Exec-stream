@@ -94,7 +94,7 @@ const CXO = () => {
           <div className="bg-[#789BFF26] px-4 sm:px-6 py-6 rounded-md">
             <div className="h-[1px] w-full bg-black mb-4" />
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
-              <h2 className="text-2xl font-bold text-black">CXO</h2>
+              <h2 className="text-2xl font-bold text-black">CXO Conversations</h2>
               <Link
                 to="/cxos"
                 className="text-[#789BFF] hover:text-black font-medium"

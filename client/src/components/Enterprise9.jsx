@@ -312,7 +312,7 @@ const Article = () => {
         <li><strong>Joint ownership between Legal and HR isn’t optional.</strong> It’s survival strategy.</li>
     </ul>
     <p><em>Letting someone go is hard. But doing it with careless language? That’s expensive.</em></p>
-    <p className="font-bold text-center">In today’s India Inc., the line between defamation and documentation is thinner than ever, and courts are watching every word.</p>
+    <p className="font-bold">In today’s India Inc., the line between defamation and documentation is thinner than ever, and courts are watching every word.</p>
 
 </article>
           </div>

@@ -8,7 +8,7 @@ const Banner = () => {
      {
       id: 1,
       image: "/ES-10.webp",
-      title: "When Public Moments Go Too Far: Legal, Privacy, People &amp; Brand Faultlines in the Kiss Cam Controversy",
+      title: "When Public Moments Go Too Far: Legal, Privacy, People & Brand Faultlines in the Kiss Cam Controversy",
       tags: ['HR', 'Legal', 'Privacy'],
       path: "/enterprise-signals/enterprise/10",
     },

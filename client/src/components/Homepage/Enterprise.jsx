@@ -5,7 +5,7 @@ const LatestNews = () => {
   const editorsPick = {
     id: 1,
     category: 'HR',
-    title: 'When Public Moments Go Too Far: Legal, Privacy, People &amp; Brand Faultlines in the Kiss Cam Controversy',
+    title: 'When Public Moments Go Too Far: Legal, Privacy, People & Brand Faultlines in the Kiss Cam Controversy',
     author: 'Biplab Sengupta',
     date: 'July 21, 2025',
     image: '/ES-10.webp',

@@ -15,7 +15,7 @@ const articles = [
    {
       id: 10,
       image: "/ES-10.webp",
-      title: "When Public Moments Go Too Far: Legal, Privacy, People &amp; Brand Faultlines in the Kiss Cam Controversy",
+      title: "When Public Moments Go Too Far: Legal, Privacy, People & Brand Faultlines in the Kiss Cam Controversy",
       category: ['HR', 'Legal', 'Privacy'],
     authors: [{ name: 'Biplab Sengupta', image: '/Biplab.jpeg' }],
     },

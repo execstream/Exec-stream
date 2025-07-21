@@ -5,11 +5,11 @@ const LatestNews = () => {
   const editorsPick = {
     id: 1,
     category: 'HR',
-    title: 'The Exit That Didn’t End: What the Wipro Defamation Ruling Means for CHROs and GCs',
+    title: 'When Public Moments Go Too Far: Legal, Privacy, People &amp; Brand Faultlines in the Kiss Cam Controversy',
     author: 'Biplab Sengupta',
-    date: 'July 18, 2025',
-    image: '/ES-9.jpg',
-    path: '/enterprise-signals/enterprise/9',
+    date: 'July 21, 2025',
+    image: '/ES-10.webp',
+    path: '/enterprise-signals/enterprise/10',
   };
 
   const newsItems = [

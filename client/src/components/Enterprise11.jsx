@@ -64,13 +64,17 @@ Breach as a Case Study in Platform Risk Maturity
                   className="h-[400px] w-[800px] object-cover rounded-xl shadow-md"
                 />
                 {" "}
-                <div className="flex justify-end">
-                  {" "}
-                  <p className="text-xs">
-                    Picture Credit: Pixabay
-                    {" "}
+               <div className="flex justify-end">
+                 <p className="text-xs">
+                    Picture Credit:{" "}
+                    <a
+                      href="https://www.tripwire.com/state-of-security/secure-ways-avoid-crypto-theft"
+                      target="_blank"
+                      className="text-blue-400 underline"
+                    >
+                      Tripwire
+                    </a>
                   </p>
-                  {" "}
                 </div>
                 {" "}
               </div>

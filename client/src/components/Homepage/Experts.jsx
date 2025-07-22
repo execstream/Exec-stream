@@ -6,7 +6,7 @@ const Experts = () => {
     { id: 1, image: "/Tanya Ganguli.jpg" },
     { id: 2, image: "/Tarini Sahoo.jpg" },
     { id: 3, image: "/Supratim Chakraborty.jpg" },
-    { id: 4, image: "/Puneet Bansal.jpg" },
+    
     { id: 5, image: "/Nishant Shah.jpg" },
     { id: 6, image: "/Prashant Phillips.jpg" },
     { id: 7, image: "/Nehaa Chaudhari.jpg" },

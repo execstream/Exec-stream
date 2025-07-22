@@ -7,47 +7,48 @@ const Banner = () => {
   const bannerContents = [
      {
       id: 1,
+      image: "/ES-11.jpg",
+      title: "KYC, Crypto & The Cracks Within: The CoinDCX Breach as a Case Study in Platform Risk Maturity",
+      tags: ['Infosec', 'Legal', 'Data Breach', 'Platform Security','FinTech'],
+      path: "/enterprise-signals/enterprise/11",
+    },
+     {
+      id: 2,
       image: "/ES-10.webp",
       title: "When Public Moments Go Too Far: Legal, Privacy, People & Brand Faultlines in the Kiss Cam Controversy",
       tags: ['HR', 'Legal', 'Privacy'],
       path: "/enterprise-signals/enterprise/10",
     },
      {
-      id: 2,
+      id: 3,
       image: "/ES-9.jpg",
       title: "The Exit That Didn’t End: What the Wipro Defamation Ruling Means for CHROs and GCs",
       tags: ['HR', 'Legal', 'HR Risk','Employment'],
       path: "/enterprise-signals/enterprise/9",
     },
     {
-      id: 3,
+      id: 4,
       image: "/ES-8.jpg",
       title: "The New Control Room: Why HR Is Now a Risk Nerve Center and What Leaders Must Do About It",
       tags: ['HR', 'Risk Management', 'HR Risk','TPRM'],
       path: "/enterprise-signals/enterprise/8",
     },
     {
-      id: 4,
+      id: 5,
       image: "/ES-7.jpg",
       title: "After 285 Edits, India’s New Tax Code Inches Closer to Reality. CFOs Stay on the Watchtower",
       tags: ['Finance',  'Tax', 'Direct Tax Code 2025'],
       path: "/enterprise-signals/enterprise/7",
     },
    {
-    id: 5,
+    id: 6,
     title: 'AI Leadership Is Surging - But So Are the Risks: Why CXOs Must Balance Acceleration with Accountability',
     tags: ['AI Skills', 'Leadership', 'HR', 'CHRO'],
     image: '/ES-6.webp',
    path: '/enterprise-signals/enterprise/6',
     
   },
-  {
-    id: 6,
-    title: ' The Last-Mile Failure of Finance Transformation. And How CFOs Can Fix It.',
-    tags: ['Finance', 'Digital Transformation', 'CFO','Finance Transformation'],
-    image: '/ES-5.png',
-  path: '/enterprise-signals/enterprise/5',
-  },
+  
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);

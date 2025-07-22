@@ -43,6 +43,7 @@ import Enterprise7 from "./components/Enterprise7";
 import Enterprise8 from "./components/Enterprise8";
 import Enterprise9 from "./components/Enterprise9";
 import Enterprise10 from "./components/Enterprise10";
+import Enterprise11 from "./components/Enterprise11";
 const App = () => {
   useEffect(() => {
     const handleRightClick = (e) => e.preventDefault();
@@ -129,6 +130,10 @@ const App = () => {
           <Route
             path="/enterprise-signals/enterprise/10"
             element={<Enterprise10 />}
+          />
+           <Route
+            path="/enterprise-signals/enterprise/11"
+            element={<Enterprise11 />}
           />
         </Routes>
       </main>

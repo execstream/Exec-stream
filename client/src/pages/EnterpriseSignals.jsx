@@ -13,6 +13,13 @@ const categories = [
 
 const articles = [
    {
+      id: 11,
+      image: "/ES-11.jpg",
+      title: "KYC, Crypto & The Cracks Within: The CoinDCX Breach as a Case Study in Platform Risk Maturity",
+      category: ['Infosec', 'Legal', 'Data Breach', 'Platform Security','FinTech'],
+    authors: [{ name: 'Biplab Sengupta', image: '/Biplab.jpeg' }],
+    },
+   {
       id: 10,
       image: "/ES-10.webp",
       title: "When Public Moments Go Too Far: Legal, Privacy, People & Brand Faultlines in the Kiss Cam Controversy",

@@ -4,23 +4,24 @@ import { Link } from 'react-router-dom';
 const LatestNews = () => {
   const editorsPick = {
     id: 1,
-    category: 'HR',
-    title: 'When Public Moments Go Too Far: Legal, Privacy, People & Brand Faultlines in the Kiss Cam Controversy',
+    category: 'Infosec',
+    title: 'KYC, Crypto & The Cracks Within: The CoinDCX Breach as a Case Study in Platform Risk Maturity',
     author: 'Biplab Sengupta',
-    date: 'July 21, 2025',
-    image: '/ES-10.webp',
-    path: '/enterprise-signals/enterprise/10',
+    date: 'July 22, 2025',
+    image: '/ES-11.jpg',
+    path: '/enterprise-signals/enterprise/11',
   };
 
   const newsItems = [
     {
-      id: 1,
-      category: 'HR',
-      title: 'The New Control Room: Why HR Is Now a Risk Nerve Center and What Leaders Must Do About It',
-      date: 'July 18, 2025',
-      image: '/ES-8.jpg',
-      path: '/enterprise-signals/enterprise/8',
-    },
+    id: 1,
+    category: 'HR',
+    title: 'When Public Moments Go Too Far: Legal, Privacy, People & Brand Faultlines in the Kiss Cam Controversy',
+   
+    date: 'July 21, 2025',
+    image: '/ES-10.webp',
+    path: '/enterprise-signals/enterprise/10',
+  },
     {
       id: 2,
       category: 'Finance',

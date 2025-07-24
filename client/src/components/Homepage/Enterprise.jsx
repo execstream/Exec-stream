@@ -4,17 +4,26 @@ import { Link } from 'react-router-dom';
 const LatestNews = () => {
   const editorsPick = {
     id: 1,
-    category: 'Infosec',
-    title: 'KYC, Crypto & The Cracks Within: The CoinDCX Breach as a Case Study in Platform Risk Maturity',
+    category: 'HR',
+    title: 'Mid-Market GCCs Are India’s Quiet Inflection Point. We Just Haven’t Realised It Yet.',
     author: 'Biplab Sengupta',
-    date: 'July 22, 2025',
-    image: '/ES-11.jpg',
-    path: '/enterprise-signals/enterprise/11',
+    date: 'July 24, 2025',
+    image: '/ES-12.webp',
+    path: '/enterprise-signals/enterprise/12',
   };
 
   const newsItems = [
     {
     id: 1,
+    category: 'HR',
+    title: 'KYC, Crypto & The Cracks Within: The CoinDCX Breach as a Case Study in Platform Risk Maturity',
+    
+    date: 'July 22, 2025',
+    image: '/ES-11.jpg',
+    path: '/enterprise-signals/enterprise/11',
+  },
+    {
+    id: 2,
     category: 'HR',
     title: 'When Public Moments Go Too Far: Legal, Privacy, People & Brand Faultlines in the Kiss Cam Controversy',
    
@@ -23,21 +32,14 @@ const LatestNews = () => {
     path: '/enterprise-signals/enterprise/10',
   },
     {
-      id: 2,
+      id: 3,
       category: 'Finance',
       title: "After 285 Edits, India’s New Tax Code Inches Closer to Reality. CFOs Stay on the Watchtower",
       date: 'July 18, 2025',
       image: '/ES-7.jpg',
       path: '/enterprise-signals/enterprise/7',
     },
-    {
-      id: 3,
-      category: 'AI Skills',
-      title: 'AI Leadership Is Surging - But So Are the Risks: Why CXOs Must Balance Acceleration with Accountability',
-      date: 'July 17, 2025',
-      image: '/ES-6.webp',
-      path: '/enterprise-signals/enterprise/6',
-    },
+   
   ];
 
   return (

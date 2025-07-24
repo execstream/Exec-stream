@@ -12,6 +12,13 @@ const categories = [
 ];
 
 const articles = [
+  {
+      id: 12,
+      image: "/ES-12.webp",
+      title: "Mid-Market GCCs Are India’s Quiet Inflection Point. We Just Haven’t Realised It Yet.",
+      category: ['HR', 'GCC'],
+    authors: [{ name: 'Biplab Sengupta', image: '/Biplab.jpeg' }],
+    },
    {
       id: 11,
       image: "/ES-11.jpg",

@@ -13,6 +13,17 @@ const categories = [
 
 
 const articles = [
+   {
+    id: 13,
+    title: 'WHAT PRIVATE EQUITY NEEDS TO KNOW ABOUT INDIA’S PRIVACY REGIME BEFORE ACQUIRING A PORTFOLIO COMPANY',
+    category: ['Legal', 'Data Privacy'],
+    image: '/Supratim.png',
+    authors: [
+      { name: 'Supratim Chakraborty', image: 'Supratim.png' },
+      { name: 'Shramana Dwibedi', image: 'Shramana.png'}
+    ],
+   
+  },
   {
     id: 12,
     title: 'The First 100 Days on a Board: What Every General Counsel(GC)-turned-...',

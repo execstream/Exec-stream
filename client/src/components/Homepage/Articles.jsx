@@ -10,8 +10,19 @@ const truncateWords = (text, wordLimit) => {
 };
 
 const articles = [
-  {
+   {
     id: 1,
+    title: 'WHAT PRIVATE EQUITY NEEDS TO KNOW ABOUT INDIA’S PRIVACY REGIME BEFORE ACQUIRING A PORTFOLIO COMPANY',
+    category: ['Legal', 'Data Privacy'],
+    image: '/medical.jpg',
+    authors: [
+      { name: 'Supratim Chakraborty', image: 'Supratim.png', designation: 'Partner', company: 'Khaitan & Co' },
+      { name: 'Shramana Dwibedi', image: 'Shramana.png', designation: 'Senior Associate', company: 'Khaitan & Co' }
+    ],
+    path: '/articles/article/13',
+  },
+  {
+    id: 2,
     title: 'The First 100 Days on a Board: What Every General Counsel(GC)-turned-...',
     category: ['Legal', 'Board Governance'],
     image: '/medical.jpg',
@@ -26,7 +37,7 @@ const articles = [
     path: '/articles/article/12',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Risk Management Playbook for Alternative Investment Funds',
     category: ['Legal', 'Fund Governance'],
     image: '/medical.jpg',
@@ -41,7 +52,7 @@ const articles = [
     path: '/articles/article/9',
   },
   {
-    id: 3,
+    id: 4,
     title: 'India-UK FTA: A blueprint trade agreement for the future',
     category: ['Finance', 'Foreign Trade'],
     image: '/Parth.jpg',
@@ -52,7 +63,7 @@ const articles = [
     path: '/articles/article/2',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Cloud Misconfiguration is the New Malware',
     category: ['Info Sec', 'Cloud Configurations'],
     image: '/cloud.jpg',
@@ -63,7 +74,7 @@ const articles = [
     path: '/articles/article/3',
   },
   {
-    id: 5,
+    id: 6,
     title: 'Labour, Employment, and HR Issues in M&A Transactions: Navigating People Risks in Deal-Making',
     category: ['Legal', 'Employment'],
     image: '/legal.jpg',
@@ -71,7 +82,7 @@ const articles = [
     path: '/articles/article/4',
   },
   {
-    id: 6,
+    id: 7,
     title: "Looks Like Content, Acts Like Ads: The Legal Risk in E-Commerce's Influencer",
     category: ['Legal', 'E Commerce'],
     image: '/Karishma.jpeg',
@@ -82,7 +93,7 @@ const articles = [
     path: '/articles/article/5',
   },
   {
-    id: 7,
+    id: 8,
     title: "Finfluencers in India: The Do's and Don’ts under SEBI’s Regulatory Framework",
     category: ['Legal', 'Consumer Protection'],
     image: '/Utkarsha Sharma .jpg',
@@ -92,14 +103,7 @@ const articles = [
     ],
     path: '/articles/article/6',
   },
-  {
-    id: 8,
-    title: 'How to Effectively Negotiate with Trade Unions in India',
-    category: ['Legal', 'Employment', 'GC', 'CHRO'],
-    image: '/Rohitaashv Sinha.svg',
-    authors: [{ name: 'Rohitaashv Sinha', image: '/Rohitaashv Sinha.jpeg', designation: 'Partner(Labour & Employment)', company: 'King Stubb & Kasiva' }],
-    path: '/articles/article/7',
-  },
+  
   
 ];
 

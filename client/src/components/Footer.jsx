@@ -45,32 +45,32 @@ const [email, setEmail] = useState("");
         <div>
           <h3 className="text-lg font-bold text-[#789BFF] mb-4">Explore</h3>
           <ul className="space-y-2 text-sm text-white">
-            <li classname="text-sm"><Link to="/function" className="hover:text-[#789BFF]">Explore by Function</Link></li>
-            <li classname="text-sm"><Link to="/cxo" className="hover:text-[#789BFF]">Explore by CXO</Link></li>
+            <li className="text-sm"><Link to="/function" className="hover:text-[#789BFF]">Explore by Function</Link></li>
+            <li className="text-sm"><Link to="/cxo" className="hover:text-[#789BFF]">Explore by CXO</Link></li>
             <li className="pt-2 font-semibold text-[#789BFF]">Categories</li>
-            <li classname="text-sm"><Link to="/news-&-analysis" className="hover:text-[#789BFF]">News & Analysis</Link></li>
-            <li classname="text-sm"><Link to="/articles" className="hover:text-[#789BFF]">Articles</Link></li>
+            <li className="text-sm"><Link to="/news-&-analysis" className="hover:text-[#789BFF]">News & Analysis</Link></li>
+            <li className="text-sm"><Link to="/articles" className="hover:text-[#789BFF]">Articles</Link></li>
           </ul>
         </div>
 
         <div>
           <h3 className="text-lg font-bold text-[#789BFF] mb-4">Community</h3>
           <ul className="space-y-2 text-sm text-white mb-6">
-            <li classname="text-sm"><Link to="/about/contact" className="hover:text-[#789BFF]">Become a Contributor</Link></li>
-            <li classname="text-sm"><Link to="/about/contact" className="hover:text-[#789BFF]">Submit a Press Release</Link></li>
+            <li className="text-sm"><Link to="/about/contact" className="hover:text-[#789BFF]">Become a Contributor</Link></li>
+            <li className="text-sm"><Link to="/about/contact" className="hover:text-[#789BFF]">Submit a Press Release</Link></li>
           </ul>
 
           <h3 className="text-lg font-bold text-[#789BFF] mb-4">About ExecStream</h3>
           <ul className="space-y-2 text-sm text-white">
-            <li classname="text-sm"><Link to="/about" className="hover:text-[#789BFF]">About Us</Link></li>
-            <li classname="text-sm"><Link to="/about/team" className="hover:text-[#789BFF]">Team</Link></li>
-             <li classname="text-sm"><Link to="/about/contact" className="hover:text-[#789BFF]">Contact</Link></li>
+            <li className="text-sm"><Link to="/about" className="hover:text-[#789BFF]">About Us</Link></li>
+            <li className="text-sm"><Link to="/about/team" className="hover:text-[#789BFF]">Team</Link></li>
+             <li className="text-sm"><Link to="/about/contact" className="hover:text-[#789BFF]">Contact</Link></li>
           </ul>
           <h2 className="text-md font-bold text-[#789BFF] mt-4 mb-4">Legal</h2>
           <ul className="space-y-2 text-sm text-white">
-            <li classname="text-sm"><Link to="/about/terms-of-use" className="hover:text-[#789BFF]">Terms of Use</Link></li>
-            <li classname="text-sm"><Link to="/about/privacy-policy" className="hover:text-[#789BFF]">Privacy Policy</Link></li>
-            <li classname="text-sm"><Link to="/about/gen-ai-policy" className="hover:text-[#789BFF]">Gen AI Policy</Link></li>
+            <li className="text-sm"><Link to="/about/terms-of-use" className="hover:text-[#789BFF]">Terms of Use</Link></li>
+            <li className="text-sm"><Link to="/about/privacy-policy" className="hover:text-[#789BFF]">Privacy Policy</Link></li>
+            <li className="text-sm"><Link to="/about/gen-ai-policy" className="hover:text-[#789BFF]">Gen AI Policy</Link></li>
           </ul>
         </div>
 

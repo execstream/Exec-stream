@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import MostPopular from "./MostPopular";
-import ArticleFooter from "./ArticleFooter";
+
 import Sidebar from "./Sidebar";
 import SlidingBanner from "../Homepage/SlidingBanner";
 

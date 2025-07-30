@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FaEye, FaRegComment } from "react-icons/fa";
+
 import MostPopular from "./MostPopular";
 
 const Article = () => {

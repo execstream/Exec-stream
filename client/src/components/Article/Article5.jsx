@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { FaEye, FaRegComment } from "react-icons/fa";
+
 import MostPopular from "./MostPopular";
 import ArticleFooter from "./ArticleFooter";
-import Comment from "./Comment";
+
 import SlidingBanner from "../Homepage/SlidingBanner";
 import Sidebar from "./Sidebar";
 

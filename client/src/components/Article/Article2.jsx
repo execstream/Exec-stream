@@ -5,20 +5,6 @@ import ArticleFooter from "./ArticleFooter";
 import Sidebar from "./Sidebar";
 import SlidingBanner from "../Homepage/SlidingBanner";
 
-const popularTags = [
-  "LEGAL",
-  "DIGITAL",
-  "FINANCE",
-  "LITIGATION",
-  "CYBER SECURITY",
-  "CXO",
-  "CFO",
-  "SUSTAINABILITY",
-  "HR",
-  "INDIA",
-  "MIDDLE EAST",
-  "INTERNATIONAL",
-];
 
 
 

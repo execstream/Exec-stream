@@ -13,6 +13,17 @@ const categories = [
 
 
 const articles = [
+  {
+    id: 14,
+    title: 'AI Model Security: Protecting Prompts, Models, and Outputs in a Dynamic Threat Landscape',
+    category: ['Infosec', 'AI Security'],
+    image: '/Amit Jaju.jpg',
+    authors: [
+      { name: 'Amit Jaju', image: '/Amit Jaju.jpg' },
+      { name: 'Amol Pitale', image: '/Amol Pitale.jpg'}
+    ],
+   
+  },
    {
     id: 13,
     title: 'WHAT PRIVATE EQUITY NEEDS TO KNOW ABOUT INDIA’S PRIVACY REGIME BEFORE ACQUIRING A PORTFOLIO COMPANY',

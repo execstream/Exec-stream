@@ -71,7 +71,7 @@ const Article2 = () => {
   [&>ul]:mb-4 [&>ul>li]:text-sm [&>ul>li]:mb-2 
   [&>ul>li>ul]:pl-6 [&>ul>li>ul>li]:list-[circle] [&>ul>li>ul>li]:text-sm [&>ul>li>ul>li]:mb-2"
           >
-            <h3>A Wake-Up Call for Investors</h3>
+         
             <p>
               Artificial intelligence is rapidly integrating into critical
               systems. This includes financial markets and healthcare

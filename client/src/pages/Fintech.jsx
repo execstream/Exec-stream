@@ -13,6 +13,12 @@ const updates = [
     date: "July 18, 2025",
     pdf: "/Fintech2.pdf",
   },
+  {
+    id: 3,
+    title: "SEBI’s 2025 Order against BSE: A Wake-Up Call for Market Infrastructure Institutions (MIIs)",
+    date: "July 25, 2025",
+    pdf: "/Fintech3.pdf",
+  },
 ];
 
 

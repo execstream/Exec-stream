@@ -23,7 +23,7 @@ const articles = [
   },
    {
     id: 2,
-    title: 'WHAT PRIVATE EQUITY NEEDS TO KNOW ABOUT INDIA’S PRIVACY REGIME BEFORE ACQUIRING A PORTFOLIO COMPANY',
+    title: "What Private Equity needs to know about India's Privacy Regime before acquiring a Portfolio Company",
     category: ['Legal', 'Data Privacy'],
     image: '/medical.jpg',
     authors: [

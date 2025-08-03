@@ -20,8 +20,8 @@ const Article2 = () => {
       <div className="flex flex-col md:flex-row gap-10">
         <div className="md:col-span-2">
           <h1 className="text-2xl md:text-5xl font-bold text-[#789BFF] mb-4">
-           WHAT PRIVATE EQUITY NEEDS TO KNOW ABOUT INDIA’S PRIVACY REGIME BEFORE ACQUIRING A
-PORTFOLIO COMPANY
+           What Private Equity needs to know about India's Privacy Regime before acquiring a
+Portfolio Company
           </h1>
  <div className="text-sm text-gray-500 flex items-center space-x-4 mb-6">
         <span>July 29, 2025</span>

@@ -19,8 +19,9 @@ const articles = [
     category: ['Legal', 'Capital Markets'],
     image: '/Bobby Jain.jpg',
     authors: [
-      { name: 'Bobby Jain', image: '/Bobby Jain.jpg' },
-      { name: 'Astha Srivastava', image: '/Astha Srivastava.jpg'}
+       { name: 'Astha Srivastava', image: '/Astha Srivastava.jpg'},
+      { name: 'Bobby Jain', image: '/Bobby Jain.jpg' }
+     
     ],
    
   },

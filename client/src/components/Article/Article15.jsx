@@ -22,16 +22,17 @@ const Article2 = () => {
           </div>
           <div className="flex flex-wrap justify-center gap-10 mb-10">
             {[
+                 {
+                name: "Astha Srivastava",
+                designation: "Principal Associate \n Ikigai Law",
+                image: "/Astha Srivastava.jpg",
+              },
               {
                 name: "Bobby Jain",
                 designation: " Senior Associate \n Ikigai Law",
                 image: "/Bobby Jain.jpg",
               },
-              {
-                name: "Astha Srivastava",
-                designation: "Principal Associate \n Ikigai Law",
-                image: "/Astha Srivastava.jpg",
-              },
+             
             ].map((author, index) => (
               <div
                 key={index}
@@ -62,7 +63,7 @@ const Article2 = () => {
               Capital Markets
             </span>
           </div>
-          <article
+         <article
     className="prose max-w-none text-gray-700 
     [&>p]:text-sm [&>p]:mb-4 
     [&>h2]:text-md [&>h2]:font-semibold [&>h2]:mb-4 
@@ -188,6 +189,26 @@ const Article2 = () => {
     </p>
     <p>
         But codes and frameworks aside, SEBI may also need to take a hard look at its liability model. AI tools evolve, sometimes unpredictably. Expecting human-level certainty from AI outputs may be asking for the impossible. SEBI could help by issuing clearer guidance on how liability applies when outputs aren’t fully human-driven.
+    </p>
+    <p>
+        Here’s where regulatory sandboxes could play a starring role. Firms experimenting inside SEBI’s sandbox - subject to SEBI’s supervision - could get a regulatory seal of approval. Once they meet the set standards, liability could be limited, encouraging responsible AI without leaving innovators exposed.
+    </p>
+    <p>
+        Alternatively, SEBI could take cues from the industry. Major tech players like Microsoft have embraced shared responsibility frameworks for AI. Their approach is simple: developers, deployers and users - all share the load. Responsibility is distributed across the AI supply chain, ensuring no single actor is unfairly burdened.
+    </p>
+    <p>
+        SEBI could do something similar. It could push for distributed responsibility through industry-led Self-Regulatory Organizations (SROs). These SROs could then help regulated entities bake AI governance right into their contracts with developers and deployers. The result? Clearer roles, shared burdens, and a governance model that scales with innovation.
+    </p>
+
+    <h3>So, where does that leave us?</h3>
+    <p>
+        These amendments make one thing clear: for now, the liability rests on the entity using/deploying AI. No safe harbour. No shrugging and pointing at the machine. And SEBI is not alone. Regulators in the <strong>USA</strong>, <strong>UK</strong>, and <strong>Canada</strong> are all moving in this direction. The <strong>SEC</strong> has even penalized investment advisory firms for AI-washing - overstating their use of AI to market their services.
+    </p>
+    <p>
+        The global trend is clear - regulators believe that no matter how autonomous the system, there’s always a <em>human-in-the-loop</em>. And the buck? It has to stop somewhere.
+    </p>
+    <p>
+        So, coming back to the same question - can capital markets have their ChatGPT moment? Sure. But not until the law catches up. And right now, it’s not in a rush.
     </p>
 </article>
         </div>

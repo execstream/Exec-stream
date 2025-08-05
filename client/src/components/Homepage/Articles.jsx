@@ -16,8 +16,9 @@ const articles = [
     category: ['Legal', 'Capital Markets'],
     image: '/Bobby Jain.jpg',
     authors: [
+       { name: 'Astha Srivastava', image: '/Astha Srivastava.jpg',designation: 'Principal Associate', company: 'Ikigai Law' },
       { name: 'Bobby Jain', image: '/Bobby Jain.jpg' ,designation: 'Senior Associate', company: 'Ikigai Law'},
-      { name: 'Astha Srivastava', image: '/Astha Srivastava.jpg',designation: 'Principal Associate', company: 'Ikigai Law' }
+     
     ],
    path: '/articles/article/15',
   },

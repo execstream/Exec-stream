@@ -13,6 +13,17 @@ const categories = [
 
 
 const articles = [
+   {
+    id: 15,
+    title: 'The Post Human Discretion: Case of Capital Markets',
+    category: ['Legal', 'Capital Markets'],
+    image: '/Bobby Jain.jpg',
+    authors: [
+      { name: 'Bobby Jain', image: '/Bobby Jain.jpg' },
+      { name: 'Astha Srivastava', image: '/Astha Srivastava.jpg'}
+    ],
+   
+  },
   {
     id: 14,
     title: 'AI Model Security: Protecting Prompts, Models, and Outputs in a Dynamic Threat Landscape',

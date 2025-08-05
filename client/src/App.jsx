@@ -47,6 +47,7 @@ import Enterprise11 from "./components/Enterprise11";
 import Enterprise12 from "./components/Enterprise12";
 import Article13 from "./components/Article/Article13";
 import Article14 from "./components/Article/Article14";
+import Article15 from "./components/Article/Article15";
 const App = () => {
   useEffect(() => {
     const handleRightClick = (e) => e.preventDefault();
@@ -88,6 +89,7 @@ const App = () => {
           <Route path="/articles/article/12" element={<Article12 />} />
           <Route path="/articles/article/13" element={<Article13 />} />
           <Route path="/articles/article/14" element={<Article14 />} />
+          <Route path="/articles/article/15" element={<Article15 />} />
           <Route path="/experts" element={<Speakers />} />
           <Route path="/weekly-digest" element={<WeeklyDigest />} />
           <Route path="/weekly/bis" element={<BIS />} />

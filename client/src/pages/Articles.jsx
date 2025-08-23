@@ -13,6 +13,18 @@ const categories = [
 
 
 const articles = [
+     {
+    id: 16,
+    title: 'Decoding NPCI Chargeback Rules: How UPI & IMPS Handle Disputes, Errors, and Fraud?',
+    category: ['Legal', 'Fintech'],
+    image: '/Arunabh.jpg',
+    authors: [
+       { name: 'Arunabh Choudhary', image: '/Arunabh.jpg'},
+     
+     
+    ],
+   
+  },
    {
     id: 15,
     title: 'The Post Human Discretion: Case of Capital Markets',

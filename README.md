@@ -61,7 +61,7 @@ Server will be running on [http://localhost:5000](http://localhost:5000) by defa
 
 | Path                   | Description                                |
 | ---------------------- | ------------------------------------------ |
-| `/api/v1/auth`         | Authentication (login, register)           |
+| `/api/v1/auth`         | Authentication (login)                     |
 | `/api/v1/content`      | Content management (CRUD, publish)         |
 | `/api/v1/newsletter`   | Newsletter subscriptions & actions         |
 | `/api/v1/tags`         | Tag management (themes, industries, roles) |
@@ -75,38 +75,35 @@ Server will be running on [http://localhost:5000](http://localhost:5000) by defa
 
 ### Public Endpoints (No Auth Required)
 
-<!-- - POST /api/v1/auth/register -->
 - POST /api/v1/auth/login
 - POST /api/v1/auth/send-otp
 - POST /api/v1/auth/forgot-password
 - POST /api/v1/auth/reset-password/:token
-<!-- - GET /api/v1/auth/google
-- GET /api/v1/auth/google/callback
-- GET /api/v1/auth/linkedin
-- GET /api/v1/auth/linkedin/callback -->
 - GET /api/v1/content/all (optional auth)
 - GET /api/v1/content/slug/:slug
 - GET /api/v1/content/flags/all
+- GET /api/v1/contributors/all
 - POST /api/v1/newsletter/subscribe
+- GET /api/v1/tags/themes/all
+- GET /api/v1/tags/sub-themes/all
+- GET /api/v1/tags/industries/all
+- GET /api/v1/tags/roles/all
 - GET /api/v1/series/all
 - GET /api/v1/series/slug/:slug
-- GET /api/v1/webconfig/event-banners/all
-- GET /api/v1/webconfig/experts/all
-- GET /api/v1/webconfig/partners/all
+- GET /api/v1/web-configs/event-banners/all
+- GET /api/v1/web-configs/experts/all
+- GET /api/v1/web-configs/partners/all
 
 ### Authentication Required
 
 - POST /api/v1/auth/logout
 - GET /api/v1/auth/me
 - PUT /api/v1/auth/me/update
-<!-- - POST /api/v1/auth/change-email/request
-- POST /api/v1/auth/change-email/verify -->
 - PUT /api/v1/auth/change-password
 - GET /api/v1/auth/check
 
 ### Role-Based Endpoints (superAdmin/editor)
 
-<!-- - DELETE /api/v1/auth/:id -->
 - PUT /api/v1/auth/admins/update-role/:id
 - GET /api/v1/auth/admins/all
 - GET /api/v1/content/get/:id
@@ -118,23 +115,22 @@ Server will be running on [http://localhost:5000](http://localhost:5000) by defa
 - POST /api/v1/content/add/:contentId/contributors
 - PATCH /api/v1/content/update/:contentId/contributors/:contributorSubId
 - DELETE /api/v1/content/delete/:contentId/contributors/:contributorSubId
-- GET /api/v1/tags/themes/all
+- GET /api/v1/tags/themes/usage/:id
+- GET /api/v1/tags/sub-themes/usage/:id
+- GET /api/v1/tags/industries/usage/:id
+- GET /api/v1/tags/roles/usage/:id
 - POST /api/v1/tags/themes/new
 - PUT /api/v1/tags/themes/update/:id
 - DELETE /api/v1/tags/themes/delete/:id
-- GET /api/v1/tags/sub-themes/all
 - POST /api/v1/tags/sub-themes/new
 - PUT /api/v1/tags/sub-themes/update/:id
 - DELETE /api/v1/tags/sub-themes/delete/:id
-- GET /api/v1/tags/industries/all
 - POST /api/v1/tags/industries/new
 - PUT /api/v1/tags/industries/update/:id
 - DELETE /api/v1/tags/industries/delete/:id
-- GET /api/v1/tags/roles/all
 - POST /api/v1/tags/roles/new
 - PUT /api/v1/tags/roles/update/:id
 - DELETE /api/v1/tags/roles/delete/:id
-- GET /api/v1/contributors/all
 - GET /api/v1/contributors/:id
 - POST /api/v1/contributors/new
 - PATCH /api/v1/contributors/update/:id
@@ -143,19 +139,20 @@ Server will be running on [http://localhost:5000](http://localhost:5000) by defa
 - PATCH /api/v1/series/update/:id
 - DELETE /api/v1/series/delete/:id
 - GET /api/v1/series/get/:id
-- POST /api/v1/webconfig/event-banners/new
-- GET /api/v1/webconfig/event-banners/all-admin
-- PATCH /api/v1/webconfig/event-banners/toggle-active/:id
-- DELETE /api/v1/webconfig/event-banners/delete/:id
-- POST /api/v1/webconfig/experts/new
-- PATCH /api/v1/webconfig/experts/update/:id
-- GET /api/v1/webconfig/experts/all-admin
-- PATCH /api/v1/webconfig/experts/toggle-active/:id
-- DELETE /api/v1/webconfig/experts/delete/:id
-- POST /api/v1/webconfig/partners/new
-- GET /api/v1/webconfig/partners/all-admin
-- PATCH /api/v1/webconfig/partners/toggle-active/:id
-- DELETE /api/v1/webconfig/partners/delete/:id
+- GET /api/v1/series/usage/:id
+- POST /api/v1/web-configs/event-banners/new
+- GET /api/v1/web-configs/event-banners/all-admin
+- PATCH /api/v1/web-configs/event-banners/toggle-active/:id
+- DELETE /api/v1/web-configs/event-banners/delete/:id
+- POST /api/v1/web-configs/experts/new
+- PATCH /api/v1/web-configs/experts/update/:id
+- GET /api/v1/web-configs/experts/all-admin
+- PATCH /api/v1/web-configs/experts/toggle-active/:id
+- DELETE /api/v1/web-configs/experts/delete/:id
+- POST /api/v1/web-configs/partners/new
+- GET /api/v1/web-configs/partners/all-admin
+- PATCH /api/v1/web-configs/partners/toggle-active/:id
+- DELETE /api/v1/web-configs/partners/delete/:id
 
 ---
 
@@ -170,7 +167,8 @@ _Request Body:_
 ```json
 {
   "email": "user@example.com",
-  "password": "password123"
+  "password": "password123",
+  "otp" : "123456".
 }
 ```
 
@@ -188,51 +186,12 @@ _✅ Response:_
     "updated_at": "2025-07-07T23:08:55.948Z",
     "__v": 0,
     "last_login": "2025-07-07T23:08:55.947Z",
-    "last_logout": "2025-07-07T23:06:40.741Z",
-    "provider": "local"
+    "last_logout": "2025-07-07T23:06:40.741Z"
   }
 }
 ```
 
 ---
-
-<!-- ### 📝 Register
-
-**POST /api/v1/auth/register** 🌐 _Public_
-
-_Request Body:_
-
-```json
-{
-  "name": "New User",
-  "email": "newuser@example.com",
-  "password": "password123",
-  "otp": "123456",
-  "role": "editor"
-}
-```
-
-_✅ Response:_
-
-```json
-{
-  "message": "Admin registered successfully",
-  "admin": {
-    "_id": "6832af7e0466922553a3a87d",
-    "name": "Suyash Pandey",
-    "email": "suyashpandey310@gmail.com",
-    "role": "superAdmin",
-    "created_at": "2025-05-25T05:49:50.130Z",
-    "updated_at": "2025-07-07T23:08:55.948Z",
-    "__v": 0,
-    "last_login": "2025-07-07T23:08:55.947Z",
-    "last_logout": "2025-07-07T23:06:40.741Z",
-    "provider": "local"
-  }
-}
-```
-
---- -->
 
 ### 📧 Send OTP
 
@@ -336,71 +295,9 @@ _✅ Response:_
   "updated_at": "2025-07-07T23:08:55.948Z",
   "__v": 0,
   "last_login": "2025-07-07T23:08:55.947Z",
-  "last_logout": "2025-07-07T23:06:40.741Z",
-  "provider": "local"
+  "last_logout": "2025-07-07T23:06:40.741Z"
 }
 ```
-
----
-
-<!-- ### 🔗 Google OAuth
-
-**GET /api/v1/auth/google** 🌐 _Public_
-
-> _Description:_ Redirects user to Google OAuth consent screen. No body required.
-
-_Query Parameters:_ role=editor (optional - used to set a cookie for signup role)
-
----
-
-### 🔗 Google OAuth Callback
-
-**GET /api/v1/auth/google/callback** 🌐 _Public_
-
-> _Description:_ Callback endpoint for Google OAuth. On success, authenticates user and redirects or responds with user info.
-
-_✅ Success Response:_
-
-```json
-{
-  "message": "Google login successful",
-  "user": {
-    "_id": "665f6e7b8c1b2a0012c3d4e5",
-    "name": "Google User",
-    "email": "googleuser@example.com",
-    "role": "user"
-  }
-}
-```
-
-_❌ On Failure:_ Redirects to ${CLIENT_URL}/login?error=google_auth_failed
-
----
-
-### 💼 LinkedIn OAuth
-
-**GET /api/v1/auth/linkedin** 🌐 _Public_
-
-> _Description:_ Redirects user to LinkedIn OAuth consent screen.
-
-_Query Parameters:_ role=editor (optional - used to set a cookie for signup role)
-
----
-
-### 💼 LinkedIn OAuth Callback -->
-
-**GET /api/v1/auth/linkedin/callback** 🌐 _Public_
-
-> _Description:_ Callback endpoint for LinkedIn OAuth. If the user already exists, they are logged in. If it's a new user and a signup_role cookie is set, the user is created.
-
-_✅ Success:_
-
-- Sets JWT token in an HttpOnly cookie
-- Redirects to ${CLIENT_URL}/
-
-_❌ Failure:_
-
-- Redirects to ${CLIENT_URL}/login?error=linkedin_auth_failed
 
 ---
 
@@ -426,7 +323,6 @@ _✅ Response:_
     "name": "Updated Name",
     "email": "admin@example.com",
     "role": "editor",
-    "provider": "local",
     "created_at": "2025-05-25T05:49:50.130Z",
     "updated_at": "2025-07-10T14:00:00.000Z"
   }
@@ -434,61 +330,6 @@ _✅ Response:_
 ```
 
 ---
-
-<!-- ### 📧 Request Email Change
-
-**POST /api/v1/auth/change-email/request** 🔒 _Requires Authentication_
-
-_Request Body:_
-
-```json
-{
-  "new_email": "newadmin@example.com",
-  "current_password": "oldpassword123"
-}
-```
-
-_✅ Response:_
-
-```json
-{
-  "message": "OTP sent to new email."
-}
-```
-
----
-
-### ✅ Verify Email Change
-
-**POST /api/v1/auth/change-email/verify** 🔒 _Requires Authentication_
-
-_Request Body:_
-
-```json
-{
-  "new_email": "newadmin@example.com",
-  "otp": "123456"
-}
-```
-
-_✅ Response:_
-
-```json
-{
-  "message": "Email updated successfully.",
-  "admin": {
-    "_id": "6832af7e0466922553a3a87d",
-    "name": "Admin Name",
-    "email": "newadmin@example.com",
-    "role": "editor",
-    "provider": "local",
-    "created_at": "2025-05-25T05:49:50.130Z",
-    "updated_at": "2025-07-10T14:10:00.000Z"
-  }
-}
-```
-
---- -->
 
 ### 🔐 Change Password
 
@@ -513,30 +354,6 @@ _✅ Response:_
 
 ---
 
-<!-- ### 🗑 Soft Delete Admin -->
-
-**DELETE /api/v1/auth/\:id** 🔒👑 _Requires Authentication + Role_ (superAdmin)
-
-_Params:_ id of admin (that is to be deleted by superAdmin)
-
-_Request Body:_
-
-```json
-{
-  "password": "adminpassword123"
-}
-```
-
-_✅ Response:_
-
-```json
-{
-  "message": "Admin marked for deletion. Will be permanently removed in 30 days if not reactivated."
-}
-```
-
----
-
 ### ✅ Check Authenticated User
 
 **GET /api/v1/auth/check** 🔒 _Requires Authentication_
@@ -549,7 +366,6 @@ _✅ Response:_
   "name": "Admin Name",
   "email": "admin@example.com",
   "role": "editor",
-  "provider": "local",
   "created_at": "2025-05-25T05:49:50.130Z",
   "updated_at": "2025-07-10T14:00:00.000Z"
 }
@@ -602,7 +418,6 @@ _✅ Response:_
       "name": "Admin Name",
       "email": "admin@example.com",
       "role": "superAdmin",
-      "provider": "local",
       "created_at": "2025-05-25T05:49:50.130Z",
       "updated_at": "2025-07-10T14:00:00.000Z"
     }
@@ -627,7 +442,10 @@ _Query Parameters:_
 | limit | 10 | Items per page (max: 100) |
 | content_type | optional | Filter by content type |
 | sort | updated_at:desc | Sort format: field:asc\|desc |
-| exec_role_id | optional | Filter by exec_roles |
+| exec_role_id | optional | Filter by exec_role_id |
+| theme_id | optional | Filter by theme_id |
+| sub_theme_id | optional | Filter by sub_theme_id |
+| industry_id | optional | Filter by industry_id |
 | series_id | optional | Filter content of a particular series |
 | search | optional | Search in title, slug, body, ai_summary |
 
@@ -978,20 +796,16 @@ _✅ Response:_
 
 ## 🏷 Tag Management
 
-> **All tag endpoints require authentication and superAdmin or editor role.**
-
 ### 🎯 Themes
 
-**GET /api/v1/tags/themes/all** 🔒👑 _Requires Authentication + Role_ (superAdmin, editor)
-
-_Headers:_ Cookie with token
+**GET /api/v1/tags/themes/all** 🌐 _Public_
 
 _✅ Response:_
 
 ```json
 {
   "message": "All Theme fetched successfully",
-  "themes": [
+  "items": [
     {
       "_id": "6832c3716ef334374315ef68",
       "name": "Leadership",
@@ -1001,6 +815,21 @@ _✅ Response:_
       "__v": 0
     }
   ]
+}
+```
+
+---
+
+**GET /api/v1/tags/themes/usage/:id** 🔒👑 _Requires Authentication + Role_ (superAdmin, editor)
+
+> _Description:_ Checks how many content documents are associated with a specific theme before deletion.
+
+_✅ Response:_
+
+```json
+{
+  "message": "Usage count fetched successfully.",
+  "count": 25
 }
 ```
 
@@ -1084,16 +913,14 @@ _✅ Response:_
 
 ### 🧩 SubThemes
 
-**GET /api/v1/tags/sub-themes/all** 🔒👑 _Requires Authentication + Role_ (superAdmin, editor)
-
-_Headers:_ Cookie with token
+**GET /api/v1/tags/sub-themes/all** 🌐 _Public_
 
 _✅ Response:_
 
 ```json
 {
   "message": "All SubTheme fetched successfully",
-  "themes": [
+  "items": [
     {
       "_id": "6832c3716ef334374315ef68",
       "name": "Leadership",
@@ -1103,6 +930,21 @@ _✅ Response:_
       "__v": 0
     }
   ]
+}
+```
+
+---
+
+**GET /api/v1/tags/sub-themes/usage/:id** 🔒👑 _Requires Authentication + Role_ (superAdmin, editor)
+
+> _Description:_ Checks how many content documents are associated with a specific sub-theme before deletion.
+
+_✅ Response:_
+
+```json
+{
+  "message": "Usage count fetched successfully.",
+  "count": 12
 }
 ```
 
@@ -1186,16 +1028,14 @@ _✅ Response:_
 
 ### 🏭 Industries
 
-**GET /api/v1/tags/industries/all** 🔒👑 _Requires Authentication + Role_ (superAdmin, editor)
-
-_Headers:_ Cookie with token
+**GET /api/v1/tags/industries/all** 🌐 _Public_
 
 _✅ Response:_
 
 ```json
 {
   "message": "Industries fetched successfully",
-  "industries": [
+  "items": [
     {
       "_id": "6832c3716ef334374315ef68",
       "name": "Finance",
@@ -1205,6 +1045,21 @@ _✅ Response:_
       "__v": 0
     }
   ]
+}
+```
+
+---
+
+**GET /api/v1/tags/industries/usage/:id** 🔒👑 _Requires Authentication + Role_ (superAdmin, editor)
+
+> _Description:_ Checks how many content documents are associated with an industry before deletion.
+
+_✅ Response:_
+
+```json
+{
+  "message": "Usage count fetched successfully.",
+  "count": 30
 }
 ```
 
@@ -1256,16 +1111,14 @@ _✅ Response:_
 
 ### 👔 Executive Roles
 
-**GET /api/v1/tags/roles/all** 🔒👑 _Requires Authentication + Role_ (superAdmin, editor)
-
-_Headers:_ Cookie with token
+**GET /api/v1/tags/roles/all** 🌐 _Public_
 
 _✅ Response:_
 
 ```json
 {
   "message": "Executive roles fetched successfully",
-  "roles": [
+  "items": [
     {
       "_id": "6832c3716ef334374315ef68",
       "name": "CEO",
@@ -1275,6 +1128,23 @@ _✅ Response:_
       "__v": 0
     }
   ]
+}
+```
+
+---
+
+### 📊 Get Tag Usage Counts
+
+**GET /api/v1/tags/roles/usage/:id** 🔒👑 _Requires Authentication + Role_ (superAdmin, editor)
+
+> _Description:_ Checks how many content documents are associated with an executive role before deletion.
+
+_✅ Response:_
+
+```json
+{
+  "message": "Usage count fetched successfully.",
+  "count": 8
 }
 ```
 
@@ -1330,7 +1200,7 @@ _✅ Response:_
 
 ### 📋 Get All Contributors
 
-**GET /api/v1/contributors/all** 🔒👑 _Requires Authentication + Role_
+**GET /api/v1/contributors/all** 🌐 _Public_
 
 _✅ Response:_
 
@@ -1527,6 +1397,23 @@ _✅ Response:_
 
 ---
 
+### 📊 Get Series Usage Count
+
+**GET /api/v1/series/usage/:id** 🔒👑 _Requires Authentication + Role_ (superAdmin, editor)
+
+> _Description:_ Checks how many content documents are associated with a specific series. This is useful for showing a confirmation warning before deletion.
+
+_✅ Response:_
+
+```json
+{
+  "message": "Usage count fetched successfully.",
+  "count": 15
+}
+```
+
+---
+
 ### ➕ Create Series
 
 **POST /api/v1/series/create** 🔒 _Requires Authentication + Role_ (superAdmin, editor)
@@ -1572,7 +1459,7 @@ _Request Body:_ Same fields as create (excluding slug and created_by)
 
 #### 🖼 Event Banners
 
-**GET /api/v1/webconfig/event-banners/all** 🌐 _Public_
+**GET /api/v1/web-configs/event-banners/all** 🌐 _Public_
 
 ```json
 {
@@ -1587,11 +1474,11 @@ _Request Body:_ Same fields as create (excluding slug and created_by)
 
 #### 👨‍💼 Experts
 
-**GET /api/v1/webconfig/experts/all** 🌐 _Public_
+**GET /api/v1/web-configs/experts/all** 🌐 _Public_
 
 #### 🤝 Partners
 
-**GET /api/v1/webconfig/partners/all** 🌐 _Public_
+**GET /api/v1/web-configs/partners/all** 🌐 _Public_
 
 ---
 
@@ -1721,7 +1608,6 @@ Routes use middleware in this order:
 - All endpoints return _JSON_.
 - Maximum limit for pagination is _100 items per page_
 - Base64 images are _NOT_ supported for content banner uploads
-- OAuth integration available for Google and LinkedIn
 - JWT tokens are stored in HttpOnly cookies for security
 - Rate limiting may apply to prevent abuse
 
@@ -1735,7 +1621,6 @@ Routes use middleware in this order:
 - _File Upload:_ Multer direct file upload
 - _Database:_ MongoDB
 - _Image Storage:_ Cloudinary integration
-- _OAuth Providers:_ Google, LinkedIn
 
 ---
 
@@ -1744,24 +1629,11 @@ Routes use middleware in this order:
 ### Authentication Flow
 
 ```javascript
-// Register new user
+// request otp for login
 fetch("/api/v1/auth/send-otp", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ email: "user@example.com" }),
-});
-
-// Register with OTP
-fetch("/api/v1/auth/register", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    name: "John Doe",
-    email: "user@example.com",
-    password: "password123",
-    otp: "123456",
-    role: "editor",
-  }),
 });
 
 // Login
@@ -1771,6 +1643,7 @@ fetch("/api/v1/auth/login", {
   body: JSON.stringify({
     email: "user@example.com",
     password: "password123",
+    otp: "123456",
   }),
 });
 ```
@@ -1809,28 +1682,10 @@ fetch("/api/v1/content/123/toggle/featured", {
 
 ```javascript
 // Add subscriber
-fetch("/api/v1/newsletter/subscribers/new", {
+fetch("/api/v1/newsletter/subscribe", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ email: "subscriber@example.com" }),
-});
-
-// Create newsletter issue
-fetch("/api/v1/newsletter/issue/create", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  credentials: "include",
-  body: JSON.stringify({
-    title: "Weekly Executive Digest",
-    scheduled_for: "2025-06-10T10:00:00.000Z",
-    content_blocks: [
-      {
-        content_id: "123",
-        category: "Featured Articles",
-        link: "https://example.com/article",
-      },
-    ],
-  }),
 });
 ```
 
@@ -1859,7 +1714,6 @@ fetch("/api/v1/newsletter/issue/create", {
 - **Password Hashing** with bcrypt
 - **Input Validation** and sanitization
 - **CORS Protection** configured
-- **OAuth Integration** for secure third-party login
 
 ---
 
@@ -1920,5 +1774,5 @@ fetch("/api/v1/newsletter/issue/create", {
 For API support and documentation updates, please contact [Suyash Pandey](mailto:suyash@exec-stream.com).
 
 **API Version:** v1  
-**Last Updated:** July 25, 2025  
+**Last Updated:** July 27, 2025  
 **Documentation Status:** ✅ Complete

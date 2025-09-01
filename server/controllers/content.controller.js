@@ -12,6 +12,10 @@ import {
   validateSortField,
   validateSortOrder,
 } from "../utils/validators.js";
+import {
+  clearCacheByKey,
+  clearCacheByPrefix,
+} from "../helpers/cache.helpers.js";
 
 export const listAll = async (req, res) => {
   console.log("Fetching paginated content list");
@@ -25,15 +29,24 @@ export const listAll = async (req, res) => {
       search,
       exec_role_id,
       series_id,
+      theme_id,
+      sub_theme_id,
+      industry_id,
     } = req.query;
 
     const pageNum = Number(page);
     const limitNum = Math.min(Number(limit), 100);
 
-    let warning = null;
-    if (Number(limit) > 100) {
-      warning = "Limit capped to 100 items max per page.";
-    }
+    const addTagFilter = (queryParam, fieldName, filterObj) => {
+      if (!queryParam) return;
+      const ids = queryParam.split(",").map((id) => id.trim());
+      for (const id of ids) {
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+          throw new Error(`Invalid ID format provided for ${fieldName}.`);
+        }
+      }
+      filterObj[fieldName] = { $in: ids };
+    };
 
     const filter = {};
     const isAdmin =
@@ -44,23 +57,19 @@ export const listAll = async (req, res) => {
     if (content_type) {
       const typeError = validateContentType(content_type);
       if (typeError) {
-        return res.status(400).json({ message: typeError });
+        throw new Error(typeError);
       }
       filter.content_type = content_type;
     }
 
-    if (exec_role_id) {
-      if (!mongoose.Types.ObjectId.isValid(exec_role_id)) {
-        return res
-          .status(400)
-          .json({ message: "Invalid exec_role_id format." });
-      }
-      filter.exec_role_ids = exec_role_id;
-    }
+    addTagFilter(theme_id, "theme_ids", filter);
+    addTagFilter(sub_theme_id, "sub_theme_ids", filter);
+    addTagFilter(industry_id, "industry_ids", filter);
+    addTagFilter(exec_role_id, "exec_role_ids", filter);
 
     if (series_id) {
       if (!mongoose.Types.ObjectId.isValid(series_id)) {
-        return res.status(400).json({ message: "Invalid series_id format." });
+        throw new Error("Invalid series_id format.");
       }
       filter.series_id = series_id;
     }
@@ -72,12 +81,12 @@ export const listAll = async (req, res) => {
     const [sortField, sortOrder] = sort.split(":");
     const sortFieldError = validateSortField(sortField);
     if (sortFieldError) {
-      return res.status(400).json({ message: sortFieldError });
+      throw new Error(sortFieldError);
     }
 
     const sortOrderError = validateSortOrder(sortOrder);
     if (sortOrderError) {
-      return res.status(400).json({ message: sortOrderError });
+      throw new Error(sortOrderError);
     }
     const sortOptions = { [sortField]: sortOrder === "asc" ? 1 : -1 };
 
@@ -87,6 +96,8 @@ export const listAll = async (req, res) => {
   content_type 
   series_id, 
   banner_image_url 
+  banner_credit_url 
+  banner_credit_name 
   ai_summary 
   meta_description 
   meta_keywords 
@@ -119,17 +130,24 @@ export const listAll = async (req, res) => {
 
     console.log("Contents fetched successfully");
 
-    res.json({
+    const response = {
       message: "Contents fetched successfully",
       currentPage: pageNum,
       totalPages: Math.ceil(total / limitNum),
       totalItems: total,
       contents,
-      ...(warning && { warning }),
-    });
+    };
+
+    if (Number(limit) > 100) {
+      response.warning = "Limit capped to 100 items max per page.";
+    }
+
+    res.status(200).json(response);
   } catch (err) {
     console.error("Error fetching paginated content:", err);
-    res.status(500).json({ message: "Error fetching paginated content" });
+    res
+      .status(400)
+      .json({ message: err.message || "Error fetching paginated content" });
   }
 };
 
@@ -144,7 +162,7 @@ export const getBySlug = async (req, res) => {
     if (!content) return res.status(404).json({ message: "Content not found" });
 
     console.log("Content fetched successfully by slug");
-    res.json({ message: "Content fetched successfully", content });
+    res.status(200).json({ message: "Content fetched successfully", content });
   } catch (err) {
     console.error("Error in getBySlug:", err);
     res.status(500).json({ message: "Failed to fetch content" });
@@ -159,7 +177,7 @@ export const getById = async (req, res) => {
     if (!content) return res.status(404).json({ message: "Content not found" });
 
     console.log("Content fetched successfully");
-    res.json({ message: "Content fetched successfully", content });
+    res.status(200).json({ message: "Content fetched successfully", content });
   } catch (err) {
     console.error("Error in getById:", err);
     res.status(500).json({ message: "Failed to fetch content" });
@@ -214,6 +232,7 @@ export const createContent = async (req, res) => {
     });
 
     await content.save();
+    await clearCacheByPrefix("/api/v1/content");
     console.log("Content created successfully:", content._id);
     res.status(201).json({
       message: "Content created successfully",
@@ -305,8 +324,11 @@ export const updateContent = async (req, res) => {
 
     await content.save();
 
+    await clearCacheByKey(`/api/v1/content/slug/${content.slug}`);
+    await clearCacheByPrefix("/api/v1/content");
+
     console.log("Content updated successfully:", content._id);
-    res.json({
+    res.status(200).json({
       message: "Content updated successfully",
       content,
     });
@@ -366,6 +388,10 @@ export const removeContent = async (req, res) => {
     }
 
     await content.deleteOne();
+
+    await clearCacheByKey(`/api/v1/content/slug/${content.slug}`);
+    await clearCacheByPrefix("/api/v1/content");
+
     console.log("Content deleted successfully:", req.params.id);
     res.status(200).json({ message: "Content deleted successfully" });
   } catch (err) {
@@ -401,8 +427,12 @@ export const publishContent = async (req, res) => {
     content.updated_by = req.user.id;
 
     await content.save();
+
+    await clearCacheByKey(`/api/v1/content/slug/${content.slug}`);
+    await clearCacheByPrefix("/api/v1/content");
+
     console.log("Content published successfully:", content._id);
-    res.json({
+    res.status(200).json({
       message: "Content published successfully",
       content: {
         id: content._id,
@@ -509,9 +539,14 @@ export const patchContributorInContent = async (req, res) => {
 
     await content.save();
 
+    await clearCacheByKey(`/api/v1/content/slug/${content.slug}`);
+    await clearCacheByPrefix("/api/v1/content");
+
     console.log("Contributor updated successfully");
 
-    res.json({ message: "Contributor updated in content", contributor });
+    res
+      .status(200)
+      .json({ message: "Contributor updated in content", contributor });
   } catch (err) {
     console.error("Error updating content contributor:", err);
 
@@ -586,9 +621,12 @@ export const deleteContributorFromContent = async (req, res) => {
 
     await content.save();
 
+    await clearCacheByKey(`/api/v1/content/slug/${content.slug}`);
+    await clearCacheByPrefix("/api/v1/content");
+
     console.log("Contributor deleted from content successfully");
 
-    res.json({ message: "Contributor removed from content" });
+    res.status(200).json({ message: "Contributor removed from content" });
   } catch (err) {
     console.error("Error removing contributor from content:", err);
     res.status(500).json({ message: "Server error" });
@@ -661,9 +699,12 @@ export const addContributorToContent = async (req, res) => {
 
     await content.save();
 
+    await clearCacheByKey(`/api/v1/content/slug/${content.slug}`);
+    await clearCacheByPrefix("/api/v1/content");
+
     console.log("Contributor added to content:", contributorSnapshot);
 
-    res.json({
+    res.status(201).json({
       message: "Contributor added to content",
       contributor: contributorSnapshot,
     });
@@ -676,15 +717,19 @@ export const addContributorToContent = async (req, res) => {
 export const getFlaggedContent = async (req, res) => {
   console.log("Fetching flagged content (featured, popular, hero)");
   try {
+    const fieldsToSelect =
+      "title slug content_type banner_image_url theme_ids sub_theme_ids exec_role_ids industry_ids meta_description meta_keywords featured popular hero publish_date";
+
     const contents = await Content.find({
       $or: [{ featured: true }, { popular: true }, { hero: true }],
       status: "published",
     })
+      .select(fieldsToSelect)
       .sort({ updated_at: -1 })
       .lean();
 
     console.log(`Found ${contents.length} flagged contents`);
-    res.json({
+    res.status(200).json({
       message: "Flagged content fetched successfully",
       contents,
     });
@@ -713,6 +758,8 @@ export const toggleFlag = async (req, res) => {
     content.updated_by = req.user.id;
     await content.save();
 
+    await clearCacheByPrefix("/api/v1/content");
+
     console.log(
       `Toggled ${flag} for content ID:`,
       id,
@@ -720,7 +767,7 @@ export const toggleFlag = async (req, res) => {
       content[flag]
     );
 
-    res.json({
+    res.status(200).json({
       message: `Toggled ${flag} for content id: ${content._id}`,
       [flag]: content[flag],
     });

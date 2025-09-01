@@ -25,6 +25,8 @@ const contentSchema = new mongoose.Schema(
     },
     media_url: { type: String },
     pdf_url: { type: String },
+    banner_credit_url: { type: String },
+    banner_credit_name: { type: String },
     media_duration_sec: { type: Number },
     banner_image_url: { type: String },
     meta_description: { type: String },
@@ -102,13 +104,6 @@ contentSchema.pre("save", async function (next) {
 });
 
 contentSchema.index({ status: 1, publish_date: -1 });
-contentSchema.index({ theme_ids: 1, status: 1 });
-contentSchema.index({ sub_theme_ids: 1, status: 1 });
-contentSchema.index({ industry_ids: 1, status: 1 });
-contentSchema.index({ content_type: 1, status: 1 });
-contentSchema.index({ featured: 1, status: 1 });
-contentSchema.index({ popular: 1, status: 1 });
-contentSchema.index({ hero: 1, status: 1 });
 contentSchema.index({ created_at: -1 });
 contentSchema.index({ updated_at: -1 });
 contentSchema.index({
@@ -120,5 +115,14 @@ contentSchema.index({
 contentSchema.index({ content_type: 1, status: 1, exec_role_ids: 1 });
 contentSchema.index({ status: 1, scheduled_for: 1 });
 contentSchema.index({ status: 1, series_id: 1, publish_date: -1 });
+contentSchema.index({ series_id: 1, status: 1, publish_date: -1 });
+contentSchema.index({ theme_ids: 1, status: 1, publish_date: -1 });
+contentSchema.index({ sub_theme_ids: 1, status: 1, publish_date: -1 });
+contentSchema.index({ industry_ids: 1, status: 1, publish_date: -1 });
+contentSchema.index({ exec_role_ids: 1, status: 1, publish_date: -1 });
+contentSchema.index({ content_type: 1, status: 1, publish_date: -1 });
+contentSchema.index({ featured: 1, status: 1, publish_date: -1 });
+contentSchema.index({ popular: 1, status: 1, publish_date: -1 });
+contentSchema.index({ hero: 1, status: 1, publish_date: -1 });
 
 export default mongoose.model("Content", contentSchema);

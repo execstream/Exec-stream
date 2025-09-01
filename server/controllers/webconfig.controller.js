@@ -2,22 +2,20 @@ import EventBanner from "../models/EventBanner.js";
 import HomeExpert from "../models/HomeExpert.js";
 import PartnerCompany from "../models/PartnerCompany.js";
 import { deleteFromCloudinary } from "../helpers/cloudinary.helpers.js";
+import { clearCacheByPrefix } from '../helpers/cache.helpers.js';
 
-// PUBLIC CONTROLLERS
-// ===================================
+const resourceCachePrefixMap = {
+  banner: '/api/v1/web-configs/event-banners',
+  expert: '/api/v1/web-configs/experts',
+  partner: '/api/v1/web-configs/partners',
+};
 
-/**
- * Factory function to create a "get active items" controller for public-facing routes.
- * @param {mongoose.Model} Model - The Mongoose model to query.
- * @param {string} resourceName - The plural name of the resource (e.g., "banners").
- * @returns {Function} An Express controller function.
- */
 const getActiveItemsFactory = (Model, resourceName) => async (req, res) => {
   try {
     const items = await Model.find({ is_active: true })
       .sort({ order: "asc" })
       .lean();
-    res.json({
+    res.status(200).json({
       message: `${
         resourceName.charAt(0).toUpperCase() + resourceName.slice(1)
       } fetched successfully`,
@@ -29,14 +27,6 @@ const getActiveItemsFactory = (Model, resourceName) => async (req, res) => {
   }
 };
 
-// ADMIN CONTROLLERS
-// ===================================
-
-// --- Event Banners ---
-
-/**
- * @desc    Add a new event banner
- */
 export const addBanner = async (req, res) => {
   const { caption, link, is_active, order } = req.body;
   const imageUrl = req.uploadResults?.event_banner_image_url;
@@ -54,32 +44,33 @@ export const addBanner = async (req, res) => {
       order,
     });
     await newBanner.save();
+
+    await clearCacheByPrefix(resourceCachePrefixMap.banner);
+
     res
       .status(201)
       .json({ message: "Banner added successfully", banner: newBanner });
   } catch (err) {
     console.error("Error adding banner:", err);
-    await deleteFromCloudinary(imageUrl, "Failed Banner Upload");
-    res.status(500).json({ message: "Error adding banner" });
+    if (req.uploadResults?.event_banner_image_url) {
+      await deleteFromCloudinary(
+        req.uploadResults.event_banner_image_url,
+        "Failed Banner Upload"
+      );
+    }
+    res.status(500).json({ message: err.message || "Error adding banner" });
   }
 };
 
-// --- Home Experts ---
-
-/**
- * @desc    Add a new expert
- */
 export const addExpert = async (req, res) => {
   const { name, job_position, company_name, is_active, order } = req.body;
   const profileImageUrl = req.uploadResults?.expert_profile_image_url;
 
-  if (!name || !profileImageUrl) {
-    return res
-      .status(400)
-      .json({ message: "Name and profile image are required." });
-  }
-
   try {
+    if (!name || !profileImageUrl) {
+      throw new Error("Name and profile image are required.");
+    }
+
     const newExpert = new HomeExpert({
       name,
       expert_profile_image_url: profileImageUrl,
@@ -89,24 +80,29 @@ export const addExpert = async (req, res) => {
       order,
     });
     await newExpert.save();
+
+    await clearCacheByPrefix(resourceCachePrefixMap.expert);
+
     res
       .status(201)
       .json({ message: "Expert added successfully", expert: newExpert });
   } catch (err) {
     console.error("Error adding expert:", err);
-    await deleteFromCloudinary(profileImageUrl, "Failed Expert Upload");
-    res.status(500).json({ message: "Error adding expert" });
+    if (req.uploadResults?.expert_profile_image_url) {
+      await deleteFromCloudinary(
+        req.uploadResults.expert_profile_image_url,
+        "Failed Expert Update"
+      );
+    }
+    res.status(500).json({ message: err.message || "Error adding expert" });
   }
 };
 
-/**
- * @desc    Update an expert
- */
 export const updateExpert = async (req, res) => {
   try {
     const expert = await HomeExpert.findById(req.params.id);
     if (!expert) {
-      return res.status(404).json({ message: "Expert not found" });
+      throw new Error("Expert not found.");
     }
 
     const oldImageUrl = expert.expert_profile_image_url;
@@ -130,7 +126,9 @@ export const updateExpert = async (req, res) => {
       await deleteFromCloudinary(oldImageUrl, "Old Expert Profile Image");
     }
 
-    res.json({
+    await clearCacheByPrefix(resourceCachePrefixMap.expert);
+
+    res.status(200).json({
       message: "Expert updated successfully",
       expert: updatedExpert,
     });
@@ -142,15 +140,10 @@ export const updateExpert = async (req, res) => {
         "Failed Expert Update"
       );
     }
-    res.status(500).json({ message: "Error updating expert" });
+    res.status(500).json({ message: err.message || "Error updating expert" });
   }
 };
 
-// --- Partner Companies ---
-
-/**
- * @desc    Add a new partner
- */
 export const addPartner = async (req, res) => {
   const { company_name, link, order, is_active } = req.body;
   const logoUrl = req.uploadResults?.partner_company_logo_image_url;
@@ -168,23 +161,24 @@ export const addPartner = async (req, res) => {
       is_active,
     });
     await newPartner.save();
+
+    await clearCacheByPrefix(resourceCachePrefixMap.partner);
+
     res
       .status(201)
       .json({ message: "Partner added successfully", partner: newPartner });
   } catch (err) {
     console.error("Error adding partner:", err);
-    await deleteFromCloudinary(logoUrl, "Failed Partner Upload");
-    res.status(500).json({ message: "Error adding partner" });
+    if (req.uploadResults?.partner_company_logo_image_url) {
+      await deleteFromCloudinary(
+        req.uploadResults.partner_company_logo_image_url,
+        "Failed Partner Upload"
+      );
+    }
+    res.status(500).json({ message: err.message || "Error adding partner" });
   }
 };
 
-/**
- * Factory function to create a "delete" controller.
- * @param {mongoose.Model} Model - The Mongoose model to delete from.
- * @param {string} resourceName - The singular name of the resource (e.g., "banner").
- * @param {string} imageUrlField - The name of the field holding the image URL (e.g., "image_url").
- * @returns {Function} An Express controller function.
- */
 const deleteItemFactory =
   (Model, resourceName, imageUrlField) => async (req, res) => {
     try {
@@ -201,7 +195,9 @@ const deleteItemFactory =
         await deleteFromCloudinary(item[imageUrlField], resourceName);
       }
 
-      res.json({
+      await clearCacheByPrefix(resourceCachePrefixMap[resourceName]);
+
+      res.status(200).json({
         message: `${
           resourceName.charAt(0).toUpperCase() + resourceName.slice(1)
         } deleted successfully`,
@@ -212,18 +208,12 @@ const deleteItemFactory =
     }
   };
 
-/**
- * Factory function to create a "getAll" controller for admin panels.
- * @param {mongoose.Model} Model - The Mongoose model to query.
- * @param {string} resourceName - The plural name of the resource (e.g., "banners").
- * @returns {Function} An Express controller function.
- */
 const getAllForAdminFactory = (Model, resourceName) => async (req, res) => {
   try {
     const items = await Model.find({})
       .sort({ is_active: -1, order: "asc" })
       .lean();
-    res.json({
+    res.status(200).json({
       message: `All ${resourceName} fetched successfully for admin`,
       [`total_${resourceName}`]: items.length,
       [resourceName]: items,
@@ -234,12 +224,6 @@ const getAllForAdminFactory = (Model, resourceName) => async (req, res) => {
   }
 };
 
-/**
- * Factory function to create a "toggleStatus" controller.
- * @param {mongoose.Model} Model - The Mongoose model to update.
- * @param {string} resourceName - The singular name of the resource (e.g., "banner").
- * @returns {Function} An Express controller function.
- */
 const toggleStatusFactory = (Model, resourceName) => async (req, res) => {
   try {
     const item = await Model.findById(req.params.id);
@@ -252,7 +236,10 @@ const toggleStatusFactory = (Model, resourceName) => async (req, res) => {
     }
     item.is_active = !item.is_active;
     await item.save();
-    res.json({
+
+    await clearCacheByPrefix(resourceCachePrefixMap[resourceName]);
+
+    res.status(200).json({
       message: `${
         resourceName.charAt(0).toUpperCase() + resourceName.slice(1)
       } status toggled to ${item.is_active ? "active" : "inactive"}`,

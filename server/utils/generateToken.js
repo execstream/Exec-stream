@@ -13,7 +13,7 @@ export const generateToken = async (admin, res) => {
   res.cookie("token", token, {
     httpOnly: true,
     secure: config.IS_PRODUCTION,
-    sameSite: "none",
+    sameSite: config.IS_PRODUCTION ? "none" : "lax",
     maxAge: 24 * 60 * 60 * 1000,
   });
   return token;

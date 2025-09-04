@@ -13,7 +13,7 @@ const Article2 = () => {
   return (
     <section className="mx-auto px-6 md:px-20 py-10 text-gray-800">
       <div className="flex flex-col md:flex-row gap-10">
-        <div className="md:col-span-2 md:min-w-5xl ">
+        <div className="md:col-span-2 md:min-w-4xl ">
           <h1 className="text-2xl md:text-5xl font-bold text-[#789BFF] mb-4">
           GST 2.0: The Great GST Reset
           </h1>

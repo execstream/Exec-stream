@@ -14,6 +14,30 @@ const categories = [
 
 const articles = [
    {
+    id: 17,
+    title: 'GST 2.0: The Great GST Reset',
+    category: ['Finance', 'Tax', 'GST'],
+    image: '/Sanjay A. Chhabria.jpeg',
+    authors: [
+       { name: 'Sanjay A. Chhabria', image: '/Sanjay A. Chhabria.jpeg'},
+     { name: 'Jinesh M. Shah', image: '/Jinesh M Shah.jpeg' }
+     
+    ],
+   
+  },
+     {
+    id: 16,
+    title: 'Decoding NPCI Chargeback Rules: How UPI & IMPS Handle Disputes, Errors, and Fraud?',
+    category: ['Legal', 'Fintech'],
+    image: '/Arunabh.jpg',
+    authors: [
+       { name: 'Arunabh Choudhary', image: '/Arunabh.jpg'},
+     
+     
+    ],
+   
+  },
+   {
     id: 15,
     title: 'The Post Human Discretion: Case of Capital Markets',
     category: ['Legal', 'Capital Markets'],

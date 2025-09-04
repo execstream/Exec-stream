@@ -6,14 +6,14 @@ export const generateToken = async (admin, res) => {
     { id: admin._id, role: admin.role },
     config.JWT_SECRET,
     {
-      expiresIn: "7d",
+      expiresIn: "1d",
     }
   );
 
   res.cookie("token", token, {
     httpOnly: true,
     secure: config.IS_PRODUCTION,
-    sameSite: config.IS_PRODUCTION ? "none" : "strict",
+    sameSite: config.IS_PRODUCTION ? "none" : "lax",
     maxAge: 24 * 60 * 60 * 1000,
   });
   return token;

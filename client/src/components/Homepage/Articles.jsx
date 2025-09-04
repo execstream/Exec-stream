@@ -12,6 +12,7 @@ const truncateWords = (text, wordLimit) => {
 const articles = [
   {
     id: 1,
+
     title: 'GST 2.0: The Great GST Reset',
     category: ['Finance', 'Tax', 'GST'],
     image: '/Sanjay A. Chhabria.jpeg',
@@ -23,6 +24,8 @@ const articles = [
   },
   {
     id: 2,
+
+
     title: 'Decoding NPCI Chargeback Rules: How UPI & IMPS Handle Disputes, Errors, and Fraud?',
     category: ['Legal', 'Fintech'],
     image: '/Arunabh.jpg',
@@ -34,7 +37,10 @@ const articles = [
    path: '/articles/article/16',
   },
   {
+
     id: 3,
+
+   
     title: 'The Post Human Discretion: Case of Capital Markets',
     category: ['Legal', 'Capital Markets'],
     image: '/Bobby Jain.jpg',
@@ -46,7 +52,9 @@ const articles = [
    path: '/articles/article/15',
   },
   {
+
     id: 4,
+
     title: 'AI Model Security: Protecting Prompts, Models, and Outputs in a Dynamic Threat Landscape',
     category: ['Infosec', 'AI Security'],
     image: '/Amit Jaju.jpg',
@@ -57,7 +65,9 @@ const articles = [
     path: '/articles/article/14',
   },
    {
+
     id: 5,
+
     title: "What Private Equity needs to know about India's Privacy Regime before acquiring a Portfolio Company",
     category: ['Legal', 'Data Privacy'],
     image: '/medical.jpg',
@@ -68,7 +78,9 @@ const articles = [
     path: '/articles/article/13',
   },
   {
+
     id: 6,
+
     title: 'The First 100 Days on a Board: What Every General Counsel(GC)-turned-...',
     category: ['Legal', 'Board Governance'],
     image: '/medical.jpg',
@@ -83,7 +95,9 @@ const articles = [
     path: '/articles/article/12',
   },
   {
+
     id: 7,
+
     title: 'Risk Management Playbook for Alternative Investment Funds',
     category: ['Legal', 'Fund Governance'],
     image: '/medical.jpg',
@@ -98,7 +112,9 @@ const articles = [
     path: '/articles/article/9',
   },
   {
+
     id: 8,
+
     title: 'India-UK FTA: A blueprint trade agreement for the future',
     category: ['Finance', 'Foreign Trade'],
     image: '/Parth.jpg',
@@ -108,7 +124,9 @@ const articles = [
     ],
     path: '/articles/article/2',
   },
+
  
+
   
  
 ];

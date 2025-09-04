@@ -1,23 +1,6 @@
 import cron from "node-cron";
-import Admin from "../models/Admin.js";
 import Content from "../models/Content.js";
-
-// cron.schedule("0 0 * * *", async () => {
-//   const now = new Date();
-//   const threshold = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000); // 30 days ago
-
-//   try {
-//     const result = await Admin.deleteMany({
-//       isDeleted: true,
-//       deletedAt: { $lte: threshold },
-//     });
-//     console.log(
-//       `[CronJob] Deleted ${result.deletedCount} admin(s) permanently.`
-//     );
-//   } catch (err) {
-//     console.error("[CronJobError] Failed to delete admins:", err);
-//   }
-// });
+import { clearCacheByPrefix } from "../helpers/cache.helpers.js";
 
 const publishScheduledContent = async () => {
   console.log(
@@ -46,9 +29,15 @@ const publishScheduledContent = async () => {
       { $set: { status: "published", publish_date: now } }
     );
 
-    console.log(
-      `📢 Successfully published ${result.modifiedCount} content(s).`
-    );
+    if (result.modifiedCount > 0) {
+      console.log(
+        `📢 Successfully published ${result.modifiedCount} content(s).`
+      );
+      console.log(
+        "♻️ Clearing content caches due to newly published content..."
+      );
+      await clearCacheByPrefix("/api/v1/content");
+    }
   } catch (error) {
     console.error("Error running the publish scheduler:", error);
   }

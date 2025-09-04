@@ -12,6 +12,20 @@ const truncateWords = (text, wordLimit) => {
 const articles = [
   {
     id: 1,
+
+    title: 'GST 2.0: The Great GST Reset',
+    category: ['Finance', 'Tax', 'GST'],
+    image: '/Sanjay A. Chhabria.jpeg',
+    authors: [
+       { name: 'Sanjay A. Chhabria', image: '/Sanjay A. Chhabria.jpeg', designation: 'Indirect Tax Lead', company: 'Nexdigm' },
+       { name: 'Jinesh M. Shah', image: '/Jinesh M Shah.jpeg', designation: 'Senior Manager', company: 'Nexdigm' }
+    ],
+   path: '/articles/article/17',
+  },
+  {
+    id: 2,
+
+
     title: 'Decoding NPCI Chargeback Rules: How UPI & IMPS Handle Disputes, Errors, and Fraud?',
     category: ['Legal', 'Fintech'],
     image: '/Arunabh.jpg',
@@ -23,7 +37,10 @@ const articles = [
    path: '/articles/article/16',
   },
   {
-    id: 2,
+
+    id: 3,
+
+   
     title: 'The Post Human Discretion: Case of Capital Markets',
     category: ['Legal', 'Capital Markets'],
     image: '/Bobby Jain.jpg',
@@ -35,7 +52,9 @@ const articles = [
    path: '/articles/article/15',
   },
   {
-    id: 3,
+
+    id: 4,
+
     title: 'AI Model Security: Protecting Prompts, Models, and Outputs in a Dynamic Threat Landscape',
     category: ['Infosec', 'AI Security'],
     image: '/Amit Jaju.jpg',
@@ -46,7 +65,9 @@ const articles = [
     path: '/articles/article/14',
   },
    {
-    id: 4,
+
+    id: 5,
+
     title: "What Private Equity needs to know about India's Privacy Regime before acquiring a Portfolio Company",
     category: ['Legal', 'Data Privacy'],
     image: '/medical.jpg',
@@ -57,7 +78,9 @@ const articles = [
     path: '/articles/article/13',
   },
   {
-    id: 5,
+
+    id: 6,
+
     title: 'The First 100 Days on a Board: What Every General Counsel(GC)-turned-...',
     category: ['Legal', 'Board Governance'],
     image: '/medical.jpg',
@@ -72,7 +95,9 @@ const articles = [
     path: '/articles/article/12',
   },
   {
-    id: 6,
+
+    id: 7,
+
     title: 'Risk Management Playbook for Alternative Investment Funds',
     category: ['Legal', 'Fund Governance'],
     image: '/medical.jpg',
@@ -87,7 +112,9 @@ const articles = [
     path: '/articles/article/9',
   },
   {
-    id: 7,
+
+    id: 8,
+
     title: 'India-UK FTA: A blueprint trade agreement for the future',
     category: ['Finance', 'Foreign Trade'],
     image: '/Parth.jpg',
@@ -97,17 +124,9 @@ const articles = [
     ],
     path: '/articles/article/2',
   },
-  {
-    id: 8,
-    title: 'Cloud Misconfiguration is the New Malware',
-    category: ['Info Sec', 'Cloud Configurations'],
-    image: '/cloud.jpg',
-    authors: [
-      { name: 'Shrikrishna Dikshit', image: 'Shrikrishna Dikshit.jpg', designation: 'Partner(Digital & Cyber Security)', company: 'Baker Tilly ASA India LLP' },
-      { name: 'Rachit Shukla', image: 'Rachit Shukla.jpeg', designation: 'Executive Partner(Digital & Cyber Security)', company: 'Baker Tilly ASA India LLP' }
-    ],
-    path: '/articles/article/3',
-  },
+
+ 
+
   
  
 ];

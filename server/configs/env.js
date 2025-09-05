@@ -97,6 +97,15 @@ function validateEnvVar(key, value, isRequired = true) {
   return null;
 }
 
+function parseClientUrls(clientUrlString) {
+  if (!clientUrlString) return [];
+  
+  return clientUrlString
+    .split(',')
+    .map(url => url.trim())
+    .filter(url => url.length > 0);
+}
+
 function validateUrlFormat(key, value, requireHttps = false) {
   if (!value) return null;
 
@@ -173,16 +182,26 @@ function validateSpecificVars() {
     }
   }
 
-  const urlVars = [
-    { key: "CLIENT_URL", requireHttps: isProduction || isStaging },
-    { key: "GOOGLE_CALLBACK_URL", requireHttps: isProduction || isStaging },
-    { key: "LINKEDIN_CALLBACK_URL", requireHttps: isProduction || isStaging },
-  ];
-
-  urlVars.forEach(({ key, requireHttps }) => {
-    const error = validateUrlFormat(key, process.env[key], requireHttps);
+  // Validate CLIENT_URL(s)
+  const clientUrls = parseClientUrls(process.env.CLIENT_URL);
+  if (clientUrls.length === 0 && process.env.CLIENT_URL) {
+    // Single URL case
+    const error = validateUrlFormat("CLIENT_URL", process.env.CLIENT_URL, isProduction || isStaging);
     if (error) errors.push(error);
-  });
+    
+    if ((isProduction || isStaging) && process.env.CLIENT_URL.includes("localhost")) {
+      errors.push("CLIENT_URL should not use localhost in production/staging");
+    }
+  } else {
+    clientUrls.forEach((url, index) => {
+      const error = validateUrlFormat(`CLIENT_URL[${index}]`, url, isProduction || isStaging);
+      if (error) errors.push(error);
+      
+      if ((isProduction || isStaging) && url.includes("localhost")) {
+        errors.push(`CLIENT_URL[${index}] should not use localhost in production/staging`);
+      }
+    });
+  }
 
   const secretValidations = [
     { key: "JWT_SECRET", minLength: isProduction ? 64 : 32 },
@@ -234,13 +253,6 @@ function validateSpecificVars() {
       warnings.push(
         "LOG_LEVEL is set to 'debug' in production - consider using 'info' or 'warn'"
       );
-    }
-
-    if (
-      process.env.CLIENT_URL &&
-      process.env.CLIENT_URL.includes("localhost")
-    ) {
-      errors.push("CLIENT_URL should not use localhost in production");
     }
   }
 
@@ -337,6 +349,7 @@ export const config = {
   PORT: Number(process.env.PORT) || 5000,
   NODE_ENV: process.env.NODE_ENV || "development",
   CLIENT_URL: process.env.CLIENT_URL,
+  CLIENT_URLS: parseClientUrls(process.env.CLIENT_URL),
   REQUEST_TIMEOUT_MS: Number(process.env.REQUEST_TIMEOUT_MS) || 30000,
   HEALTH_CHECK_PATH: process.env.HEALTH_CHECK_PATH || "/health",
 

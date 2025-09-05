@@ -25,12 +25,12 @@ app.use(cookieParser());
 app.use(compression());
 app.use(
   cors({
-    origin: config.CLIENT_URL,
+    origin: config.CLIENT_URLS.length > 0 ? config.CLIENT_URLS : config.CLIENT_URL,
     credentials: true,
   })
 );
-app.use(express.json({ limit: "500kb" }));
-app.use(express.urlencoded({ limit: "500kb", extended: true }));
+app.use(express.json({ limit: "1mb" }));
+app.use(express.urlencoded({ limit: "1mb", extended: true }));
 app.use((req, res, next) => {
   if (req.path === config.HEALTH_CHECK_PATH) return next();
   return globalIpRateLimiter(req, res, next);

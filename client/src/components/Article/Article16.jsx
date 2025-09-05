@@ -227,4 +227,6 @@ Fraud?
   );
 };
 
+
 export default Article;
+

@@ -13,6 +13,18 @@ const categories = [
 
 
 const articles = [
+  {
+    id: 19,
+    title: 'From GDPR to DPDPA: Lessons for Global Privacy Convergence',
+    category: ['Legal', 'Data Privacy'],
+    image: '/Ada Shahrbanu.JPG',
+    authors: [
+       { name: 'Ada Shaharbanu', image: '/Ada Shahrbanu.JPG'},
+     
+     
+    ],
+   
+  },
      {
     id: 16,
     title: 'Decoding NPCI Chargeback Rules: How UPI & IMPS Handle Disputes, Errors, and Fraud?',
@@ -37,18 +49,7 @@ const articles = [
     ],
    
   },
-     {
-    id: 16,
-    title: 'Decoding NPCI Chargeback Rules: How UPI & IMPS Handle Disputes, Errors, and Fraud?',
-    category: ['Legal', 'Fintech'],
-    image: '/Arunabh.jpg',
-    authors: [
-       { name: 'Arunabh Choudhary', image: '/Arunabh.jpg'},
-     
-     
-    ],
    
-  },
    {
     id: 15,
     title: 'The Post Human Discretion: Case of Capital Markets',

@@ -51,7 +51,8 @@ import Article15 from "./components/Article/Article15";
 import Article16 from "./components/Article/Article16";
 
 import Article17 from "./components/Article/Article17";
-
+import Article18 from "./components/Article/Article18";
+import Article19 from "./components/Article/Article19";
 
 const App = () => {
   useEffect(() => {
@@ -98,7 +99,8 @@ const App = () => {
           <Route path="/articles/article/16" element={<Article16 />} />
 
           <Route path="/articles/article/17" element={<Article17 />} />
-
+          <Route path="/articles/article/18" element={<Article18 />} />
+          <Route path="/articles/article/19" element={<Article19 />} />
           <Route path="/experts" element={<Speakers />} />
           <Route path="/weekly-digest" element={<WeeklyDigest />} />
           <Route path="/weekly/bis" element={<BIS />} />

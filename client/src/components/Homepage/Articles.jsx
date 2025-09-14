@@ -10,6 +10,18 @@ const truncateWords = (text, wordLimit) => {
 };
 
 const articles = [
+   {
+    id: 1,
+    title: 'From GDPR to DPDPA: Lessons for Global Privacy Convergence',
+    category: ['Legal', 'Data Privacy'],
+    image: '/Ada Shahrbanu.JPG',
+    authors: [
+       { name: 'Ada Shaharbanu', image: '/Ada Shahrbanu.JPG' ,designation: 'Senior Associate', company: 'Spice Route Legal'},
+     
+     
+    ],
+    path: '/articles/article/19',
+  },
   {
     id: 1,
 

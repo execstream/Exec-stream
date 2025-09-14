@@ -13,7 +13,7 @@ const articles = [
     {
     id: 1,
     title: ' Secondment of Employees: A Legal Analysis under Service Tax, GST, Labour and Income Tax Laws',
-    category: ['Tax', 'Finance','GST'],
+    category: [ 'Finance','Tax','GST'],
     image: '/Ranjeet Mahtani.jpeg',
     authors: [
        { name: 'Ranjeet Mahatani', image: '/Ranjeet Mahtani.jpeg',designation: 'Partner', company: 'Dhruva Advisors'},

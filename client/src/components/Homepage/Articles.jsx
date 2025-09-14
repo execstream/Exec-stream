@@ -10,8 +10,18 @@ const truncateWords = (text, wordLimit) => {
 };
 
 const articles = [
-   {
+    {
     id: 1,
+    title: ' Secondment of Employees: A Legal Analysis under Service Tax, GST, Labour and Income Tax Laws',
+    category: ['Legal', 'Finance','GST'],
+    image: '/Ranjeet Mahtani.jpeg',
+    authors: [
+       { name: 'Ranjeet Mahatani', image: '/Ranjeet Mahtani.jpeg',designation: 'Partner', company: 'Dhruva Advisors'},
+    ],
+    path: '/articles/article/18',
+  },
+   {
+    id: 2,
     title: 'From GDPR to DPDPA: Lessons for Global Privacy Convergence',
     category: ['Legal', 'Data Privacy'],
     image: '/Ada Shahrbanu.JPG',
@@ -23,7 +33,7 @@ const articles = [
     path: '/articles/article/19',
   },
   {
-    id: 1,
+    id: 3,
 
     title: 'GST 2.0: The Great GST Reset',
     category: ['Finance', 'Tax', 'GST'],
@@ -35,7 +45,7 @@ const articles = [
    path: '/articles/article/17',
   },
   {
-    id: 2,
+    id: 4,
 
 
     title: 'Decoding NPCI Chargeback Rules: How UPI & IMPS Handle Disputes, Errors, and Fraud?',
@@ -50,7 +60,7 @@ const articles = [
   },
   {
 
-    id: 3,
+    id: 5,
 
    
     title: 'The Post Human Discretion: Case of Capital Markets',
@@ -65,7 +75,7 @@ const articles = [
   },
   {
 
-    id: 4,
+    id: 6,
 
     title: 'AI Model Security: Protecting Prompts, Models, and Outputs in a Dynamic Threat Landscape',
     category: ['Infosec', 'AI Security'],
@@ -78,7 +88,7 @@ const articles = [
   },
    {
 
-    id: 5,
+    id: 7,
 
     title: "What Private Equity needs to know about India's Privacy Regime before acquiring a Portfolio Company",
     category: ['Legal', 'Data Privacy'],
@@ -91,7 +101,7 @@ const articles = [
   },
   {
 
-    id: 6,
+    id: 8,
 
     title: 'The First 100 Days on a Board: What Every General Counsel(GC)-turned-...',
     category: ['Legal', 'Board Governance'],
@@ -106,36 +116,7 @@ const articles = [
     ],
     path: '/articles/article/12',
   },
-  {
-
-    id: 7,
-
-    title: 'Risk Management Playbook for Alternative Investment Funds',
-    category: ['Legal', 'Fund Governance'],
-    image: '/medical.jpg',
-    authors: [
-      {
-        name: 'Shagoofa Rashid Khan',
-        image: '/Shagoofa.jpg',
-        designation: 'Senior Partner ',
-        company: 'AZB & Partners',
-      }
-    ],
-    path: '/articles/article/9',
-  },
-  {
-
-    id: 8,
-
-    title: 'India-UK FTA: A blueprint trade agreement for the future',
-    category: ['Finance', 'Foreign Trade'],
-    image: '/Parth.jpg',
-    authors: [
-      { name: 'Parth S. Shah', image: 'Parth.jpg', designation: 'Director(Global Trade Advisory)', company: 'Delloite Touche Tohmatsu India' },
-      { name: 'Shweta Kushe', image: 'Shweta.jpg', designation: 'Assistant Manager(Global Trade Advisory)', company: 'Delloite Touche Tohmatsu India' }
-    ],
-    path: '/articles/article/2',
-  },
+  
 
  
 

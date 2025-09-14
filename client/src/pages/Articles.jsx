@@ -25,6 +25,16 @@ const articles = [
     ],
    
   },
+  {
+    id: 18,
+    title: ' Secondment of Employees: A Legal Analysis under Service Tax, GST, Labour and Income Tax Laws',
+    category: ['Legal', 'Finance','GST'],
+    image: '/Ranjeet Mahtani.jpeg',
+    authors: [
+       { name: 'Ranjeet Mahtani', image: '/Ranjeet Mahtani.jpeg'},
+    ],
+   
+  },
      {
     id: 16,
     title: 'Decoding NPCI Chargeback Rules: How UPI & IMPS Handle Disputes, Errors, and Fraud?',

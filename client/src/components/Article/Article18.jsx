@@ -37,7 +37,7 @@ const Article2 = () => {
               Finance
             </span>
             <span className="bg-blue-100 text-[#789BFF] text-xs font-bold px-3 py-1 rounded">
-             Legal
+             Tax
             </span>
               <span className="bg-blue-100 text-[#789BFF] text-xs font-bold px-3 py-1 rounded">
              GST

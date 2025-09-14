@@ -51,7 +51,7 @@ import Article15 from "./components/Article/Article15";
 import Article16 from "./components/Article/Article16";
 
 import Article17 from "./components/Article/Article17";
-import Article18 from "./components/Article/Article18";
+// import Article18 from "./components/Article/Article18";
 import Article19 from "./components/Article/Article19";
 
 const App = () => {
